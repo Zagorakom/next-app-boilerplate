@@ -1,0 +1,171 @@
+@import '@styles/variables-screen.scss';
+
+.burgerMenu {
+    @media #{$desktop} {
+        display: none;
+    }
+}
+
+.burgerWrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger {
+
+}
+
+.burgerModalPosition {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.burgerModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+}
+
+.burgerModalHead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: $header-height-mobile;
+    padding: 8px 16px;
+}
+
+.burgerLogoWrapper {
+    position: relative;
+    width: 78px;
+    height: 39px;
+    background-color: rgb(200, 0, 255); // TEMP
+    display: flex; // TEMP
+    justify-content: center; // TEMP
+    align-items: center; // TEMP
+}
+
+.burgerLogo {
+
+}
+
+.burgerCloseWrapper {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burgerClose {
+
+}
+
+.burgerModalBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    overflow-y: auto;
+}
+
+.navigation {
+    width: 100%;
+    max-width: $content-max-width-mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.user {
+    width: 100%;
+    max-width: $content-max-width-mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-shrink: 0;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.loginBtn {
+    font-size: 17px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    letter-spacing: -0.085px !important;
+}
+
+.userCardWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logOut {
+    display: flex;
+    width: 180px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: var(--gray-200);
+    background-color: #fff;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.085px;
+    padding: 8px 24px;
+    margin-top: 16px;
+}
+
+.socials {
+    width: 100%;
+    max-width: $content-max-width-mobile;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.socialLink {
+    // min-width: 100px;
+    // width: 33%;
+    // height: 44px;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 17px;
+    // letter-spacing: 0.6px;
+    color: #6B6B6B;
+}

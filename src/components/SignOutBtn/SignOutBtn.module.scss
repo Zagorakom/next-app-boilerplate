@@ -1,0 +1,83 @@
+@import '@styles/variables-screen.scss';
+
+.signOutBtnWrapper {}
+
+.signOutBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: var(--gray-light-faded);
+    }
+    &:active {
+        background-color: var(--gray-light-faded);
+    }
+    @media #{$tablet} {
+        width: 343px;
+    }
+    @media #{$desktop} {
+        transition: background-color .2s ease;
+    }
+}
+
+.signOutBtnText {
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.68px;
+    color: var(--gray-300);
+}
+
+.signOutBtnTypeAlt {
+    .signOutBtn {
+        // min-width: 200px;
+        width: auto;
+        max-width: 100%;
+        min-height: 36px;
+        padding: 8px 36px;
+    }
+    .signOutBtnText {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 21px;
+        letter-spacing: 0.64px;
+        color: var(--gray-200);
+    }
+}
+
+.signOutBtnTypeBurger {
+    .signOutBtn {
+        display: flex;
+        width: 180px;
+        height: 44px;
+        min-height: 44px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        background-color: #fff;
+        padding: 8px 24px;
+        margin-top: 16px;
+        &:hover {
+            background-color: var(--gray-light-faded);
+        }
+        &:active {
+            background-color: var(--gray-light-faded);
+        }
+    }
+    .signOutBtnText {
+        color: var(--gray-200);
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: -0.085px;
+    }
+}

@@ -1,0 +1,137 @@
+@import '@styles/variables-screen.scss';
+
+.avatarWrapper {
+    position: relative;
+    border: 2px solid var(--gray-light);
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #E7FCF1;
+    // margin-right: 12px;
+    // overflow: hidden;
+    &[data-user-rank="0"] {
+        border-color: var(--rank-newbie);
+    }
+    &[data-user-rank="1"] {
+        border-color: var(--rank-bronze);
+    }
+    &[data-user-rank="2"] {
+        border-color: var(--rank-silver);
+    }
+    &[data-user-rank="3"] {
+        border-color: var(--rank-gold);
+    }
+    &[data-user-rank="4"] {
+        border-color: var(--rank-platinum);
+    }
+    &[data-user-rank="5"] {
+        border-color: var(--rank-diamond);
+    }
+    
+}
+
+.avatarRankBadge {
+    display: flex;
+    flex-shrink: 0;
+    position: absolute;
+    bottom: -4px;
+    right: -2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 21px;
+    &[data-user-rank="0"] {
+        background-image: url('/assets/icons/ranks/rank_newbie.svg');
+        width: 22px;
+        height: 25px;
+        bottom: -7px;
+        right: -3px;
+    }
+    &[data-user-rank="1"] {
+        background-image: url('/assets/icons/ranks/rank_bronze.svg');
+        width: 20px;
+        height: 21px;
+    }
+    &[data-user-rank="2"] {
+        background-image: url('/assets/icons/ranks/rank_silver.svg');
+        width: 20px;
+        height: 21px;
+    }
+    &[data-user-rank="3"] {
+        background-image: url('/assets/icons/ranks/rank_gold.svg');
+        width: 20px;
+        height: 21px;
+    }
+    &[data-user-rank="4"] {
+        background-image: url('/assets/icons/ranks/rank_platinum.svg');
+        width: 20px;
+        height: 21px;
+    }
+    &[data-user-rank="5"] {
+        background-image: url('/assets/icons/ranks/rank_diamond.svg');
+        width: 26px;
+        height: 21px;
+        bottom: -5px;
+        right: -7px;
+        background-size: cover;
+    }
+}
+
+.avatarPositionBadge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background-color: var(--gray-300);
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    font-variant-numeric: slashed-zero tabular-nums lining-nums;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    @media #{$tablet} {
+        width: 24px;
+        height: 24px;
+        top: -8px;
+        left: -8px;
+    }
+    @media #{$desktop} {
+        width: 24px;
+        height: 24px;
+        top: -8px;
+        left: -8px;
+    }
+    &[data-user-position="1"] {
+        background-color: var(--rank-gold);
+    }
+    &[data-user-position="2"] {
+        background-color: var(--rank-silver);
+    }
+    &[data-user-position="3"] {
+        background-color: var(--rank-bronze);
+    }
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 50%;
+    // background-image: url('/assets/images/avatar-doodles/cartoon-face-doodle_purple.jpg'),
+}

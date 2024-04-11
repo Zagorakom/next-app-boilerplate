@@ -1,0 +1,10 @@
+.spinner {
+    display: flex;
+}
+
+.xl {
+    & > div {
+        width: 50px !important;
+        height: 50px !important;
+    }
+}

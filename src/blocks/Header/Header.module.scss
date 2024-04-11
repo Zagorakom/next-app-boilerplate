@@ -1,0 +1,92 @@
+@import '@styles/variables-screen.scss';
+
+.header {
+    background-color: #fff;
+	// overflow: hidden;
+	display: flex;
+	flex-direction: row;
+    justify-content: center;
+	align-items: center;
+	height: $header-height-mobile;
+    padding: 8px 16px;
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.08), 0px 0px 2px 0px rgba(0, 0, 0, 0.04), 0px 2px 16px 0px rgba(0, 0, 0, 0.06);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    z-index: 10;
+    @media #{$desktop} {
+        height: $header-height-desktop;
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.06);
+    }
+}
+
+.headerInProfile {
+    box-shadow: none;
+    @media #{$desktop} {
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.06);
+    }
+}
+
+.headerContent {
+    // overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+    color: #000;
+    width: 100%;
+    max-width: $content-fullwidth-mobile;
+    @media #{$desktop} {
+        max-width: $content-max-width-desktop;
+    }
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.headerRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.logoLink {
+    @media #{$desktop} {
+        // position: relative;
+        // top: -5px;
+    }
+}
+
+.logoWrapper {
+    position: relative;
+    width: 96px;
+    height: 48px;
+    background-color: rgb(200, 0, 255); // TEMP
+    display: flex; // TEMP
+    justify-content: center; // TEMP
+    align-items: center; // TEMP
+    @media #{$desktop} {
+        width: 126px;
+        height: 60px;
+    }
+}
+
+// .logo {}
+
+.headerNavWrapper {
+    margin-left: 32px;
+    display: none;
+    @media #{$desktop} {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 2px;
+    }
+}

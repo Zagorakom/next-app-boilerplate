@@ -1,0 +1,11 @@
+{
+    "writeKey": "TODO",
+    "readKey": "TODO2",
+    "upload": {
+      "type": "json",
+      "files": "locales/en/common.json"
+    },
+    "download": {
+      "files": "locales/${lang}/common.json"
+    }
+}

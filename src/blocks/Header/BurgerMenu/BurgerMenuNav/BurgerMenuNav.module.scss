@@ -1,0 +1,78 @@
+.burgerMenuNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.burgerMenuNavLink {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.burgerMenuNavItem {
+    width: 100%;
+    min-height: 36px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // font-size: 32px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    // line-height: 32px;
+    line-height: 20px;
+    // letter-spacing: -0.48px;
+    color: var(--burger-nav-text-color);
+    border-radius: 12px;
+    margin-bottom: 4px;
+    // transition: background-color .05s ease;
+    &:active {
+        background-color: var(--gray-light-faded);
+    }
+}
+
+.burgerMenuNavItemNew {
+    display: inline-flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 32px;
+    background-color: var(--burger-nav-new-item-bg);
+    border-radius: 12px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    color: var(--burger-nav-new-item-text-color);
+    margin-top: 16px;
+    transition: background-color .2s ease;
+    &:active {
+        background-color: var(--burger-nav-new-item-bg-tint);
+    }
+}
+
+.burgerMenuNavBadge {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    // letter-spacing: 0.48px;
+    font-variant-numeric: slashed-zero tabular-nums lining-nums;
+    color: #fff;
+    width: 32px;
+    height: 15px;
+    padding: 0 4px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--burger-nav-new-item-badge-bg);
+    border-radius: 26px;
+    margin-left: 2px;
+}

@@ -1,0 +1,28 @@
+/**** BREAKPOINTS ****/
+$screen-desktop-min: 1280px;
+$screen-tablet-min: 768px;
+/**** BREAKPOINTS ****/
+
+
+/**** MEDIA QUERIES ****/
+$desktop: '(min-width: #{$screen-desktop-min})';
+$tablet: '(min-width: #{$screen-tablet-min}) and (max-width: #{$screen-desktop-min - 1px})';
+/**** MEDIA QUERIES ****/
+
+
+/**** CONTENT SIZES ****/
+$content-max-width-mobile: 343px;
+$content-max-width-tablet: 736px;
+$content-max-width-desktop: 1200px;
+$profile-content-max-width-desktop: 890px;
+$content-fullwidth: 100vw;
+$content-fullwidth-mobile: calc($content-fullwidth - 32px);
+$content-fullwidth-tablet: calc($content-fullwidth - 32px);
+$content-fullwidth-desktop: calc($content-fullwidth - 80px);
+/**** CONTENT SIZES ****/
+
+
+/**** HEADER HEIGHTS ****/
+$header-height-mobile: 64px;
+$header-height-desktop: 88px;
+/**** HEADER HEIGHTS ****/

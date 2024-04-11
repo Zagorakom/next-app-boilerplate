@@ -1,0 +1,36 @@
+@import '@styles/variables-screen.scss';
+
+.footer {
+	background-color: #000;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	color: #fff;
+	padding: 0 16px;
+	@media #{$desktop} {
+		padding: 0 40px;
+    }
+
+}
+
+.footerContent {
+	min-height: 100px; // TEMP
+	justify-content: center; // TEMP
+	align-items: center; // TEMP
+	display: flex;
+    flex-direction: column;
+	width: $content-max-width-mobile;
+	@media #{$tablet} {
+		width: $content-fullwidth-tablet;
+		flex-direction: column;
+		// justify-content: space-between;
+    }
+	@media #{$desktop} {
+		width: $content-max-width-desktop;
+		flex-direction: column;
+		// justify-content: space-between;
+    }
+}

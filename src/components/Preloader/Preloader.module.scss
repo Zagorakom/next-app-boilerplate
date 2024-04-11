@@ -1,0 +1,17 @@
+@import '@styles/variables-screen.scss';
+
+.spinnerWrapper {
+    width: 100%;
+    height: calc(100vh - 280px);
+    min-height: 80px;
+    border-radius: 16px;
+    background-color: var(--gray-light-faded);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinnerWrapperSm {
+    width: 80px;
+    height: 80px;
+}

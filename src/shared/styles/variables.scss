@@ -1,0 +1,101 @@
+:root {
+	/******** BASE COLORS >>>> ********/
+	--green: #00DE69;
+	--green-rgb: 0,222,105;
+	--green85: rgba(var(--green-rgb), 0.85);
+	--green70: rgba(var(--green-rgb), 0.7);
+	--green50: rgba(var(--green-rgb), 0.5);
+	--green25: rgba(var(--green-rgb), 0.25);
+	--green20: rgba(var(--green-rgb), 0.2);
+	--green15: rgba(var(--green-rgb), 0.15);
+	--green-tint: #19E178;
+	--green-shade: #00C75E;
+	--green-dark: #00B154;
+	--green-badge: #45E791;
+	--green-light-bg: #E7FCF1;
+
+	--primary: #075DC2;
+	--primary-rgb: 7,93,194;
+	--primary85: rgba(var(--primary-rgb), 0.85);
+	--primary70: rgba(var(--primary-rgb), 0.7);
+	--primary50: rgba(var(--primary-rgb), 0.5);
+	--primary25: rgba(var(--primary-rgb), 0.25);
+	--primary-tint: #1F6DC8;
+	--primary-shade: #0653AE;
+	--primary-dark: #054A9B;
+
+	--danger: #E94444;
+	--danger-rgb: 233,68,68;
+	--danger85: rgba(var(--danger-rgb), 0.85);
+	--danger70: rgba(var(--danger-rgb), 0.7);
+	--danger50: rgba(var(--danger-rgb), 0.5);
+	--danger25: rgba(var(--danger-rgb), 0.25);
+	--danger-tint: #EB5656;
+	--danger-shade: #D13D3D;
+	--danger-dark: #BA3636;
+
+	--negative: #D44E29;
+
+	--dark: #070707;
+	--dark-rgb: 7,7,7;
+	--dark85: rgba(var(--dark-rgb), 0.85);
+	--dark70: rgba(var(--dark-rgb), 0.7);
+	--dark60: rgba(var(--dark-rgb), 0.6);
+	--dark50: rgba(var(--dark-rgb), 0.5);
+	--dark25: rgba(var(--dark-rgb), 0.25);
+	--dark10: rgba(var(--dark-rgb), 0.1);
+	--dark-tint: #1A1A1A;
+	--dark-bright: #252525;
+
+	--gray: #292929;
+	--gray-rgb: 41,41,41;
+	--gray85: rgba(var(--gray-rgb), 0.85);
+	--gray70: rgba(var(--gray-rgb), 0.7);
+	--gray50: rgba(var(--gray-rgb), 0.5);
+	--gray25: rgba(var(--gray-rgb), 0.25);
+	--gray10: rgba(var(--gray-rgb), 0.1);
+	--gray-tint: #3E3E3E;
+	--gray-shade: #242424;
+	--gray-dark: #202020;
+	--gray-light: #E6E6E6;
+	--gray-light-faded: rgba(230, 230, 230, 0.40);
+	--gray-300: #6B6B6B;
+	--gray-200: #B8B8B8;
+	--gray-100: #E6E6E6;
+	/******** <<<< BASE COLORS ********/
+
+
+	/******** BUTTONS >>>> ********/
+	//
+	/******** <<<< BUTTONS ********/
+
+
+	/******** SPINNERS >>>> ********/
+	//
+	/******** <<<< SPINNERS ********/
+
+
+	/******** NAV >>>> ********/
+	--burger-nav-text-color: var(--dark);
+	--burger-nav-new-item-text-color: #003C1C;
+	--burger-nav-new-item-bg: var(--brand-light-bg);
+	--burger-nav-new-item-bg-tint: #d0f9e4;
+	--burger-nav-new-item-badge-bg: var(--brand-badge);
+	--nav-item-bg-gray: var(--gray-light-faded);
+	/******** <<<< NAV ********/
+
+
+	/******** GRADIENTS >>>> ********/
+	--gradient-green-bg: linear-gradient(180deg, #00DE69 0%, #3FFFF3 100%);
+	/******** <<<< GRADIENTS ********/
+
+
+	/******** RANK COLORS >>>> ********/
+	--rank-newbie: #00DE69;
+	--rank-bronze: #E07F1F;
+	--rank-silver: #C0C0C0;
+	--rank-gold: #FFC800;
+	--rank-platinum: #E5E4E2;
+	--rank-diamond: #B9F2FF;
+	/******** <<<< RANK COLORS ********/
+}

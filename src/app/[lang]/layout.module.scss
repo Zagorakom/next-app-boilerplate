@@ -1,0 +1,15 @@
+@import '@styles/variables-screen.scss';
+
+.layout {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    padding-top: $header-height-mobile;
+    @media #{$desktop} {
+        padding-top: $header-height-desktop;
+    }
+}
+
+.main {
+    min-height: 100vh;
+}
