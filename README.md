@@ -3,7 +3,7 @@
 React, Typescript, Next.js (app router + server components)\
 (also: SCSS, redux-toolkit, next-translate, docker-multi-env)
 
-### Requirements: `Node.js v20.9.0`
+### Requirements: `Node.js >= v20.9.0`
 > make `.env.local` file using sample `.env.local.sample`
 
 &nbsp;
