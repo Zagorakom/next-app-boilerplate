@@ -1,10 +1,6 @@
 'use client';
 import styles from './ModalConfirmation.module.scss';
-import { useEffect, memo } from 'react';
-import useTranslation from 'next-translate/useTranslation';
-import Button from '@components/Button';
-import Spinner from '@components/Spinner';
-import { ESpinnerVariants } from '@typings/Spinner';
+import { Button } from '@nextui-org/react';
 
 interface IProps {
     text: string | React.ReactNode;
@@ -15,15 +11,14 @@ interface IProps {
     actionInProgress?: boolean;
 }
 
-const ModalConfirmation: React.FC<IProps> = memo(function ModalConfirmation({
+const ModalConfirmation: React.FC<IProps> = ({
     text,
     confirmText = 'Confirm',
     cancelText = 'Cancel',
     onConfirm,
     onCancel,
     actionInProgress,
-}) {
-    const { t, lang } = useTranslation('common');
+}) => {
     
     return (
         <div className={styles.modalConfirmation}>
@@ -32,35 +27,29 @@ const ModalConfirmation: React.FC<IProps> = memo(function ModalConfirmation({
             </div>
             <div className={styles.btnGroup}>
                 <Button
-                    isRounded={true}
-                    inModal='confirm'
-                    disabled={actionInProgress}
-                    width='114px'
-                    height='41px'
-                    onClick={onConfirm}
-                    text={
-                        actionInProgress ?
-                        <Spinner
-                            variant={ESpinnerVariants.Success}
-                            size='sm'
-                            animation='border'
-                        />
-                        :
-                        <span>{confirmText}</span>
-                    }
-                />
+                    color="success"
+                    variant="solid"
+                    radius="lg"
+                    isDisabled={actionInProgress}
+                    isLoading={actionInProgress}
+                    onPress={onConfirm}
+                    className='w-1/2 mx-2'
+                >
+                    {actionInProgress ? '' : confirmText}
+                </Button>
                 <Button
-                    isRounded={true}
-                    inModal='cancel'
-                    disabled={actionInProgress}
-                    width='114px'
-                    height='41px'
-                    onClick={onCancel}
-                    text={cancelText}
-                />
+                    color="danger"
+                    variant="ghost"
+                    radius="lg"
+                    isDisabled={actionInProgress}
+                    onPress={onCancel}
+                    className='w-1/2 mx-2'
+                >
+                    {cancelText}
+                </Button>
             </div>
         </div>
     );
-});
+};
 
 export default ModalConfirmation;

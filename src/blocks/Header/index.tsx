@@ -22,6 +22,7 @@ const Header: React.FC = () => {
         <header className={cn(
             styles.header,
             isProfileSection && styles.headerInProfile,
+            // 'dark text-foreground bg-background'
         )}>
             <div className={styles.headerContent}>
                 <div className={styles.headerLeft}>
@@ -31,7 +32,10 @@ const Header: React.FC = () => {
                         // prefetch={false}
                         className={styles.logoLink}
                     >
-                        <div className={styles.logoWrapper}>
+                        <div className={cn(
+                            styles.logoWrapper,
+                            'bg-secondary-300 text-default-800',
+                        )}>
                             Logo
                             {/* <Image
                                 // src="/assets/icons/logo_black.svg"

@@ -6,7 +6,8 @@ import styles from './HeaderUser.module.scss';
 import cn from 'classnames';
 import Avatar from '@components/Avatar';
 import Image from 'next/image';
-import Button from '@components/Button';
+// import Button from '@components/Button';
+import { Button } from '@nextui-org/button';
 import useTranslation from 'next-translate/useTranslation';
 import SignOutBtn from '@components/SignOutBtn';
 import { UserContext } from '@providers/UserProvider';
@@ -42,25 +43,7 @@ const HeaderUser: React.FC = () => {
     return (
         <div className={styles.headerUser}>
             {!user ?
-                <Button
-                    variant={'success'}
-                    // text={
-                    //     !isAuthLoadingTest ?
-                    //     'Login'
-                    //     :
-                    //     <Spinner
-                    //         variant={ESpinnerVariants.Light}
-                    //         size='sm'
-                    //         animation='border'
-                    //     />
-                    // }
-                    text={'Login'}
-                    width='167px'
-                    height='41px'
-                    className={styles.loginBtn}
-                    // onClick={tryLoginTest} // TEMP
-                    // href={}
-                />
+                <Button color='success' className='m-1 w-24 text-white'>Login</Button>
                 :
                 <div className={styles.headerUserMenu} ref={headerUserMenuRef}>
                     <div

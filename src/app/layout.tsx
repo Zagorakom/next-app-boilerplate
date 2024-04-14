@@ -55,7 +55,7 @@ export default async function RootLayout({
 
 	return (
 		// <html lang={lang}>
-		<html className='dark text-foreground bg-background'>
+		<html className='light text-foreground bg-background'>
 			<body className={cn(
 				fontInter.className,
 				fontInter.variable,

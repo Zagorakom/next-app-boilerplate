@@ -1,14 +1,12 @@
 @import '@styles/variables-screen.scss';
 
 .footer {
-	background-color: #000;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 	width: 100%;
-	color: #fff;
 	padding: 0 16px;
 	@media #{$desktop} {
 		padding: 0 40px;

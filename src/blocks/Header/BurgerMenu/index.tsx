@@ -4,9 +4,8 @@ import Link from 'next/link';
 import { useTransition, animated } from '@react-spring/web';
 import styles from './BurgerMenu.module.scss';
 import cn from 'classnames';
-import Button from '@components/Button';
-import Spinner from '@components/Spinner';
-import { ESpinnerVariants } from '@typings/Spinner';
+// import Button from '@components/Button';
+import { Button } from '@nextui-org/button';
 import Image from 'next/image';
 // import logoImage from '@public/assets/icons/logo_black.svg';
 // import { rgbDataURL } from '@utils/rgb';
@@ -98,7 +97,10 @@ const BurgerMenu: React.FC = () => {
 								// prefetch={false}
 								onClick={() => setIsModalVisible(false)}
 							>
-								<div className={styles.burgerLogoWrapper}>
+								<div className={cn(
+									styles.burgerLogoWrapper,
+									'bg-secondary-300 text-default-800',
+								)}>
 									Logo
 									{/* <Image
 										// src="/assets/icons/logo_black.svg"
@@ -138,25 +140,7 @@ const BurgerMenu: React.FC = () => {
 							</div>
 							<div className={styles.user}>
 								{!user ?
-									<Button
-										variant={'success'}
-										// text={
-										// 	!isAuthLoadingTest ?
-										// 	'Login'
-										// 	:
-										// 	<Spinner
-										// 		variant={ESpinnerVariants.Light}
-										// 		size='sm'
-										// 		animation='border'
-										// 	/>
-										// }
-										text={'Login'}
-										width='240px'
-										height='52px'
-										className={styles.loginBtn}
-										// onClick={tryLoginTest} // TEMP
-										// href={}
-									/>
+									<Button color='success' className='m-1 w-24 text-white'>Login</Button>
 									:
 									<div className={styles.userCardWrapper}>
 										<SignOutBtn

@@ -16,7 +16,7 @@
     padding: 6rem;
     padding-bottom: 200px;
     min-height: 100vh;
-    background: linear-gradient(30deg, rgb(121, 74, 152), rgb(140, 63, 173)); // TEMP
+    background: linear-gradient(30deg, rgba(121, 74, 152, 0.6), rgb(140, 63, 173, 0.6)); // TEMP
     @media (max-width: 700px) {
         padding: 16px;
         justify-content: center;

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
+// @import 'bootstrap/dist/css/bootstrap.min.css';
 @import '@styles/variables.scss';
 
 :root {
@@ -81,26 +81,29 @@ body {
 
 //Hide Arrows From Input Number
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-  appearance: none;
-	margin: 0;
-}
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button {
+// 	-webkit-appearance: none;
+//   appearance: none;
+// 	margin: 0;
+// }
 
 /* Firefox */
-input[type='number'] {
-	appearance: textfield;
+// input[type='number'] {
+// 	appearance: textfield;
+// }
+
+.code_text {
+  font-family: var(--font-mono);
+  b, strong {
+    font-weight: 700;
+  }
 }
 
-body {
-  color: rgb(var(--foreground-rgb-test));
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+// a {
+//   color: inherit;
+//   text-decoration: none;
+// }
 
 /* @media (prefers-color-scheme: dark) {
   html {

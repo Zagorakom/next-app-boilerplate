@@ -10,7 +10,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark70);
+    // background-color: var(--dark70);
+    // backdrop-filter: blur(4px) saturate(10%) brightness(30%);
+    // backdrop-filter: blur(4px);
+    // backdrop-filter: sepia(90%);
+    // backdrop-filter: saturate(10%);
+    // backdrop-filter: invert(80%);
+    // backdrop-filter: hue-rotate(120deg);
+    // backdrop-filter: brightness(50%);
+    // backdrop-filter: contrast(40%);
+    // backdrop-filter: drop-shadow(4px 4px 10px blue);
+    // backdrop-filter: grayscale(30%);
+    // backdrop-filter: opacity(20%);
+    
     z-index: 12;
 }
 .modalBaseBgDefault {
