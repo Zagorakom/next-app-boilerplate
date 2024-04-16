@@ -120,7 +120,8 @@ const ModalBase: React.FC<IProps> = ({
                     (appearance === 'default') && styles.modalBaseBgDefault,
                     (appearance === 'slide-bottom') && styles.modalBaseBgSlideBottom,
                 )}
-                onClick={onBackgroundClick}
+                // onClick={onBackgroundClick} // bug on mobile
+                onMouseUp={onBackgroundClick}
             >
                 <animated.div
                     className={cn(
