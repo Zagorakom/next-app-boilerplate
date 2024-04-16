@@ -1,6 +1,6 @@
 import styles from './page.module.scss';
 // import Link from 'next/link';
-import { Link } from "@nextui-org/react";
+import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import Avatar from '@components/Avatar';
 import { Button } from '@nextui-org/button';

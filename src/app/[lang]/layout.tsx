@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { ReduxProvider } from '@providers/ReduxProvider';
 import UserProvider from '@providers/UserProvider';
-import { Providers } from '@providers/providers';
+import { UiProvider } from '@providers/UiProvider';
 import { getUser } from '@fetchApi/server/getUser';
 import { DevToolsController } from '@utils/devTools/component';
 import { logBoldGreen } from '@utils/log';
@@ -54,7 +54,7 @@ export default async function MainLayout({
 	logBoldGreen(`MainLayout lang = ${lang}`);
 
 	return (
-		<Providers>
+		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light" }}>
 			<ReduxProvider>
 				<UserProvider userData={user?.data}>
 					<div className={styles.layout} data-lang={lang}>
@@ -67,6 +67,6 @@ export default async function MainLayout({
 					</div>
 				</UserProvider>
 			</ReduxProvider>
-		</Providers>
+		</UiProvider>
 	);
 }

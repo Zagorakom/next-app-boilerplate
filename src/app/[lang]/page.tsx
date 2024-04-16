@@ -3,7 +3,7 @@ import styles from './page.module.scss';
 import { env_isPROD, env_isDEV } from '@constants/envVars';
 import { logEnvVars } from '@utils/log';
 // import Link from 'next/link';
-import { Link } from "@nextui-org/react";
+import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import ClientCode from '@components/client-code';
 import { logBoldGreen } from '@utils/log';

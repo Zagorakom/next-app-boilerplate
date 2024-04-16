@@ -4,13 +4,20 @@ import { useState, useCallback } from 'react';
 import { Spinner, Button } from '@nextui-org/react';
 import ModalBase from '@components/Modals/ModalBase';
 import ModalConfirmation from '@components/Modals/ModalConfirmation';
+import { ThemeSwitch } from '@ui/ThemeSwitch';
+import {
+	GithubIcon,
+	DiscordIcon,
+	HeartFilledIcon,
+	SearchIcon,
+} from '@ui/Icons';
 // import Link from 'next/link';
-import { Link } from "@nextui-org/react";
+import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import cn from 'classnames';
 
 export default function AboutPage() {
-    const { t, lang } = useTranslation('about');
+	const { t, lang } = useTranslation('about');
 	const [isModalVisible, setIsModalVisible] = useState(false);
 	const [isModalActionInProgress, setIsModalActionInProgress] = useState(false);
 
@@ -61,6 +68,28 @@ export default function AboutPage() {
 							Show Modal
 						</Button>
 					</div>
+				</h2>
+				<h2 className={cn(
+					styles.modeName,
+					'flex flex-row justify-center items-center gap-4'
+				)}>
+					<HeartFilledIcon size={36} className="text-danger-700" />
+					
+					<DiscordIcon size={36} className="text-secondary-500" />
+					
+					<Link color='danger' isExternal isBlock href={`https://github.com/Zagorakiss`} aria-label="Github">
+						<GithubIcon size={36} className="text-default-800" />
+					</Link>
+					
+					<Button
+                        variant="bordered"
+                        color="secondary"
+                        disableRipple
+						// isIconOnly
+						className="min-w-0 w-12 h-12 p-4"
+                    >
+						<ThemeSwitch iconSize={32} />
+					</Button>
 				</h2>
 			</div>
 
