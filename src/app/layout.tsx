@@ -1,29 +1,8 @@
 import '@styles/globals.scss';
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { fontInter, fontCode, fontGramatika } from '@configs/fonts';
 import cn from 'classnames';
 // import useTranslation from 'next-translate/useTranslation';
-
-const fontInter = localFont({
-	src: '../shared/styles/fonts/InterVariable.woff2',
-	variable: '--font-inter',
-});
-
-// const fontGramatika = localFont({
-// 	src: [
-// 		{
-// 			path: '../shared/styles/fonts/GramatikaRegular.woff',
-// 			weight: '400',
-//       		style: 'normal',
-// 		},
-// 		{
-// 			path: '../shared/styles/fonts/GramatikaBold.woff',
-// 			weight: '700',
-//       		style: 'normal',
-// 		}
-// 	],
-// 	variable: '--font-gramatika'
-// });
 
 export const metadata: Metadata = {
 	title: 'Next App',
@@ -55,11 +34,13 @@ export default async function RootLayout({
 
 	return (
 		// <html lang={lang}>
-		<html>
+		<html className='light text-foreground bg-background' suppressHydrationWarning>
 			<body className={cn(
 				fontInter.className,
 				fontInter.variable,
-				// fontGramatika.variable,
+				fontCode.variable,
+				fontGramatika.variable,
+				'antialiased',
 			)}>
 				{children}
 			</body>

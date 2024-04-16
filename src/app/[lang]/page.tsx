@@ -2,13 +2,14 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import { env_isPROD, env_isDEV } from '@constants/envVars';
 import { logEnvVars } from '@utils/log';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import ClientCode from '@components/client-code';
 import { logBoldGreen } from '@utils/log';
 
 export default async function HomePage() {
-	// await sleep(1000); // simulate slow page load to show loading page
+	// await sleep(2000); // simulate slow page load to show loading page
 
 	logEnvVars();
 
@@ -29,10 +30,9 @@ const Home: React.FC = () => {
 
 	return (
 		<div className={styles.main}>
-			<div className={styles.description}>
-				<p>
-					Home page&nbsp;
-					<code className={styles.code}>app/page.tsx</code>
+			<div className='w-full flex'>
+				<p className='text-default-100 bg-default-700 text-sm px-6 py-3 rounded-xl'>
+					<code>Home page&nbsp; <b className='text-danger-400'>app/page.tsx</b></code>
 				</p>
 			</div>
 
@@ -45,15 +45,33 @@ const Home: React.FC = () => {
 				</div>
 				<div>
 					<div>
-						<Link href='/en'>English</Link>
+						<Link
+							href='/en'
+							isDisabled={lang === 'en'}
+							isBlock
+						>
+							English
+						</Link>
 					</div>
 
 					<div>
-						<Link href='/ru'>Russian</Link>
+						<Link
+							href='/ru'
+							isDisabled={lang === 'ru'}
+							isBlock
+						>
+							Russian
+						</Link>
 					</div>
 				</div>
 				<div>
-					<Link href={`/${lang}/about`}>About ➡️</Link>
+					<Link
+						href={`/${lang}/about`}
+						showAnchorIcon
+						underline='always'
+					>
+						About
+					</Link>
 				</div>
 			</div>
 

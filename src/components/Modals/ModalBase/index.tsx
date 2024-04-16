@@ -16,29 +16,30 @@ interface IProps {
     children: React.ReactNode;
 }
 
-const ModalBase: React.FC<IProps> = memo(function ModalBase({
+const ModalBase: React.FC<IProps> = ({
     isVisible,
     onClose,
     appearance = 'default',
     children,
     customStyleBg,
     customStyleBody,
-}) {
+}) => {
     const {blockBodyScroll, unBlockBodyScroll, resetBodyScroll} = useBodyScrollLock();
     const { isBodyScrollLocked, bodyScrollLockedBy } = useSelector((state: any) => state.ui);
     const dispatch = useDispatch();
 
     const transRef = useSpringRef();
-    const transitions = useTransition(isVisible, {
+    const transitions = useTransition(isVisible ? [1] : [], {
         ref: transRef,
-		from: { backgroundColor: 'rgba(7,7,7,0)' },
-		enter: { backgroundColor: 'rgba(7,7,7,0.7)' },
-		leave: { backgroundColor: 'rgba(7,7,7,0)' },
+		from: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
+		enter: { backdropFilter: 'blur(4px) saturate(10%) brightness(30%)' },
+		leave: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
         // config: config.default, // default = { tension: 170, friction: 26 }
+        // config: config.stiff, // stiff = { tension: 210, friction: 20 }
         config: {
-            tension: 180,
-            friction: 26
-        }
+            tension: 220,
+            friction: 24
+        },
 	});
     const springDefaultRef = useSpringRef();
     const springDefault = useSpring({
@@ -53,11 +54,11 @@ const ModalBase: React.FC<IProps> = memo(function ModalBase({
             scale: isVisible ? 1 : 0.5,
             opacity: isVisible ? '1' : '0',
         },
-        // config: config.stiff, // stiff = { tension: 210, friction: 20 }
-        config: {
-            tension: 200,
-            friction: 20
-        }
+        config: config.stiff, // stiff = { tension: 210, friction: 20 }
+        // config: {
+        //     tension: 200,
+        //     friction: 20
+        // },
     });
     const springSlideBottomRef = useSpringRef();
     const springSlideBottom = useSpring({
@@ -71,13 +72,13 @@ const ModalBase: React.FC<IProps> = memo(function ModalBase({
         config: {
             tension: 200,
             friction: 24
-        }
+        },
     });
 
     const animationModalBody = (appearance === 'slide-bottom') ? springSlideBottom : springDefault;
     const springRef = (appearance === 'slide-bottom') ? springSlideBottomRef : springDefaultRef;
 
-    useChain(isVisible ? [transRef, springRef] : [springRef, transRef]);
+    useChain(isVisible ? [transRef, springRef] : [springRef, transRef], [0, 0]);
 
     useEffect(() => {
 		if (isVisible) {
@@ -108,8 +109,7 @@ const ModalBase: React.FC<IProps> = memo(function ModalBase({
     };
     
     return (
-        transitions((transitionStyle, isVisible) => (
-            isVisible ?
+        transitions((transitionStyle, data) => (
             <animated.div
                 style={{
                     ...transitionStyle,
@@ -120,7 +120,8 @@ const ModalBase: React.FC<IProps> = memo(function ModalBase({
                     (appearance === 'default') && styles.modalBaseBgDefault,
                     (appearance === 'slide-bottom') && styles.modalBaseBgSlideBottom,
                 )}
-                onClick={onBackgroundClick}
+                // onClick={onBackgroundClick} // bug on mobile
+                onMouseUp={onBackgroundClick}
             >
                 <animated.div
                     className={cn(
@@ -136,10 +137,8 @@ const ModalBase: React.FC<IProps> = memo(function ModalBase({
                     {children}
                 </animated.div>
             </animated.div>
-            :
-            null
         ))
     );
-});
+};
 
 export default ModalBase;

@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import { ReduxProvider } from '@providers/ReduxProvider';
 import UserProvider from '@providers/UserProvider';
+import { UiProvider } from '@providers/UiProvider';
 import { getUser } from '@fetchApi/server/getUser';
 import { DevToolsController } from '@utils/devTools/component';
 import { logBoldGreen } from '@utils/log';
@@ -13,7 +14,6 @@ import useTranslation from 'next-translate/useTranslation';
 
 export const metadata: Metadata = {
 	title: 'Next App | Main',
-	description: 'Next App Boilerplate',
 };
 
 export default async function MainLayout({
@@ -21,7 +21,8 @@ export default async function MainLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const user = await getUser();
+	// const user = await getUser();
+
 	// const user = { // mockData from mockapi endpoint
 	// 	"id": "1",
 	// 	"data": {
@@ -34,12 +35,16 @@ export default async function MainLayout({
 	// 	},
 	// 	"status": "ok"
 	// }
+
 	// const user = {
 	// 	data: {
 	// 		user_id: 4
 	// 	},
 	// 	status: 'ok',
 	// };
+
+	const user: any = {};
+
 	console.log('layoutMain -> user.status', user?.status);
 	console.log('layoutMain -> user_id', user?.data?.id);
 	console.log('layoutMain -> user_fullname', user?.data?.fullName);
@@ -49,17 +54,19 @@ export default async function MainLayout({
 	logBoldGreen(`MainLayout lang = ${lang}`);
 
 	return (
-		<ReduxProvider>
-			<UserProvider userData={user?.data}>
-				<div className={styles.layout} data-lang={lang}>
-					<DevToolsController />
-					<Header />
-					<main className={styles.main}>
-						{children}
-					</main>
-					<Footer />
-				</div>
-			</UserProvider>
-		</ReduxProvider>
+		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light" }}>
+			<ReduxProvider>
+				<UserProvider userData={user?.data}>
+					<div className={styles.layout} data-lang={lang}>
+						<DevToolsController />
+						<Header />
+						<main className={styles.main}>
+							{children}
+						</main>
+						<Footer />
+					</div>
+				</UserProvider>
+			</ReduxProvider>
+		</UiProvider>
 	);
 }

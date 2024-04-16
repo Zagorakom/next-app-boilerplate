@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import i18n from '@root/i18n';
-import { SUPPORTED_SECTIONS } from '@constants/navigation';
+import { SUPPORTED_SECTIONS } from '@configs/navigation';
 import URLS from '@fetchApi/endpoints';
 
 export async function middleware(request: NextRequest) {

@@ -11,6 +11,13 @@ interface IProps {
     children: React.ReactNode;
 }
 
+/*
+    TODO:
+    - CopyToClipboardBtn -> CopyToClipboard
+    - Wrap any component
+    - Use Sonner instead of react-hot-toast (<Toaster /> in providers)
+*/
+
 const CopyToClipboardBtn: React.FC<IProps> = ({
     text,
     children,

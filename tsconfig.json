@@ -29,6 +29,7 @@
       "@blocks/*": ["src/blocks/*"],
       "@shared/*": ["src/shared/*"],
 			"@constants/*": ["src/shared/constants/*"],
+      "@configs/*": ["src/shared/configs/*"],
       "@fetchApi/*": ["src/fetchApi/*"],
       "@hooks/*": ["src/shared/hooks/*"],
       "@mocks/*": ["src/shared/mocks/*"],
@@ -36,6 +37,7 @@
 			"@store/*": ["src/store/*"],
 			"@styles/*": ["src/shared/styles/*"],
       "@typings/*": ["src/shared/typings/*"],
+      "@ui/*": ["src/shared/ui/*"],
 			"@utils/*": ["src/shared/utils/*"],
     }
   },
