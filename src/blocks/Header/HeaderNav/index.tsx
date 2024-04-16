@@ -2,7 +2,7 @@ import styles from './HeaderNav.module.scss';
 import cn from 'classnames';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
-import { NAVIGATION_LIST, NAVIGATION_TRANSLATION_NS } from '@constants/navigation';
+import { NAVIGATION_LIST, NAVIGATION_TRANSLATION_NS } from '@configs/navigation';
 
 const HeaderNav: React.FC = () => {
     const { t, lang } = useTranslation(NAVIGATION_TRANSLATION_NS);

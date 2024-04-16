@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { screen_DESKTOP, screen_TABLET, screen_MOBILE } from '@constants/responsive';
+import { screen_DESKTOP, screen_TABLET, screen_MOBILE } from '@configs/responsive';
 
 // Hook
 export function useResponsive() {

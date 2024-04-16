@@ -29,6 +29,7 @@
       "@blocks/*": ["src/blocks/*"],
       "@shared/*": ["src/shared/*"],
 			"@constants/*": ["src/shared/constants/*"],
+      "@configs/*": ["src/shared/configs/*"],
       "@fetchApi/*": ["src/fetchApi/*"],
       "@hooks/*": ["src/shared/hooks/*"],
       "@mocks/*": ["src/shared/mocks/*"],

@@ -2,7 +2,7 @@ import styles from './BurgerMenuNav.module.scss';
 import cn from 'classnames';
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
-import { NAVIGATION_LIST, NAVIGATION_TRANSLATION_NS } from '@constants/navigation';
+import { NAVIGATION_LIST, NAVIGATION_TRANSLATION_NS } from '@configs/navigation';
 
 interface IProps {
 	setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;

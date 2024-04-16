@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 // import logoImage from '@public/assets/icons/logo_white.svg';
 import useTranslation from 'next-translate/useTranslation';
-import { NAVIGATION_TRANSLATION_NS } from '@constants/navigation';
+import { NAVIGATION_TRANSLATION_NS } from '@configs/navigation';
 import cn from 'classnames';
 
 const Footer: React.FC = () => {
