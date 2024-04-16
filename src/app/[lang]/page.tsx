@@ -2,7 +2,8 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 import { env_isPROD, env_isDEV } from '@constants/envVars';
 import { logEnvVars } from '@utils/log';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { Link } from "@nextui-org/react";
 import useTranslation from 'next-translate/useTranslation';
 import ClientCode from '@components/client-code';
 import { logBoldGreen } from '@utils/log';
@@ -44,15 +45,33 @@ const Home: React.FC = () => {
 				</div>
 				<div>
 					<div>
-						<Link href='/en'>English</Link>
+						<Link
+							href='/en'
+							isDisabled={lang === 'en'}
+							isBlock
+						>
+							English
+						</Link>
 					</div>
 
 					<div>
-						<Link href='/ru'>Russian</Link>
+						<Link
+							href='/ru'
+							isDisabled={lang === 'ru'}
+							isBlock
+						>
+							Russian
+						</Link>
 					</div>
 				</div>
 				<div>
-					<Link href={`/${lang}/about`}>About ➡️</Link>
+					<Link
+						href={`/${lang}/about`}
+						showAnchorIcon
+						underline='always'
+					>
+						About
+					</Link>
 				</div>
 			</div>
 

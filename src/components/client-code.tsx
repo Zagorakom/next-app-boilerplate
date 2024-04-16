@@ -10,9 +10,6 @@ export default function ClientCode() {
 
 	return (
 		<div>
-			<div>{t('hello')}</div>
-			<div>{t('300')}</div>
-			<div>{t('ranks:ranks.platinum')}</div>
 			<div>
 				{/* <button onClick={() => setCount((v) => v + 1)}>+</button> */}
 				{/* <Button

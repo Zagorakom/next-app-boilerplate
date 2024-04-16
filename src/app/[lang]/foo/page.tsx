@@ -1,5 +1,6 @@
 import styles from './page.module.scss';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { Link } from "@nextui-org/react";
 import useTranslation from 'next-translate/useTranslation';
 import Avatar from '@components/Avatar';
 import { Button } from '@nextui-org/button';
@@ -15,7 +16,7 @@ const FooPage: React.FC = () => {
 			</div>
 
 			<div className={styles.grid}>
-				<h2 className='text-foreground-100'>Avatar example: {/* <span>-&gt;</span> */}</h2>
+				<h2 className='text-foreground-800'>Avatar example: {/* <span>-&gt;</span> */}</h2>
                 <div className={styles.avatarsWrapper}>
                     <Avatar
                         avatarStyle={{
@@ -123,7 +124,7 @@ const FooPage: React.FC = () => {
 			</div>
 
             <div className={styles.grid}>
-				<h2 className='text-red-300'>Button example: {/* <span>-&gt;</span> */}</h2>
+				<h2 className='text-danger-800'>Button example: {/* <span>-&gt;</span> */}</h2>
                 <div className={styles.avatarsWrapper}>
                     <Button radius='full' color='secondary' className='m-1'>Click me</Button>
                     <Button radius='lg' color='primary' className='m-1'>Click me</Button>
@@ -139,7 +140,13 @@ const FooPage: React.FC = () => {
 			<div className={styles.grid50}>
 				<div>{t`title`}</div>
 				<div>
-					<Link href={`/${lang}`}>Back to Home page ⬅️</Link>
+                    <Link
+						href={`/${lang}`}
+						showAnchorIcon
+						underline='always'
+					>
+						Back to Home page
+					</Link>
 				</div>
 			</div>
         </div>

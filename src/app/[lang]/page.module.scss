@@ -45,7 +45,8 @@
 }
 
 .modeName {
-  color: orangered;
+  // color: orangered;
+  @apply text-danger-700;
   @media (max-width: 700px) {
     margin-top: 20px !important;
   }
@@ -56,7 +57,7 @@
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width-test);
   max-width: 100%;
-  color: navajowhite;
+  // color: navajowhite;
   @media (max-width: 700px) {
     width: 288px;
     margin-bottom: 60px !important;
@@ -73,7 +74,7 @@
   grid-template-columns: 4fr 2fr 1fr 1fr;
   width: var(--max-width-test);
   max-width: 100%;
-  color: navajowhite;
+  // color: navajowhite;
   @media (max-width: 700px) {
       width: 288px;
       margin-bottom: 60px !important;

@@ -4,7 +4,8 @@ import { useState, useCallback } from 'react';
 import { Spinner, Button } from '@nextui-org/react';
 import ModalBase from '@components/Modals/ModalBase';
 import ModalConfirmation from '@components/Modals/ModalConfirmation';
-import Link from 'next/link';
+// import Link from 'next/link';
+import { Link } from "@nextui-org/react";
 import useTranslation from 'next-translate/useTranslation';
 import cn from 'classnames';
 
@@ -66,7 +67,13 @@ export default function AboutPage() {
 			<div className={styles.grid50}>
 				<div>{t`title`}</div>
 				<div>
-					<Link href={`/${lang}`}>Back to Home page ⬅️</Link>
+					<Link
+						href={`/${lang}`}
+						showAnchorIcon
+						underline='always'
+					>
+						Back to Home page
+					</Link>
 				</div>
 			</div>
 
