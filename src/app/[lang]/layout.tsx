@@ -54,7 +54,7 @@ export default async function MainLayout({
 	logBoldGreen(`MainLayout lang = ${lang}`);
 
 	return (
-		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light" }}>
+		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light-wb", themes: ["light-wb", "dark-wb"] }}>
 			<ReduxProvider>
 				<UserProvider userData={user?.data}>
 					<div className={styles.layout} data-lang={lang}>
