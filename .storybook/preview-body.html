@@ -1,0 +1,21 @@
+<!-- <div id="custom-root">
+
+</div> -->
+
+<script>
+    const htmlTag = document.querySelector('html');
+    htmlTag.classList.add("light");
+    htmlTag.classList.add("text-foreground");
+    htmlTag.classList.add("bg-background");
+
+    let currentTheme = 'light';
+
+    const changeTheme = () => {
+        htmlTag.classList.remove("light");
+        htmlTag.classList.remove("dark");
+        htmlTag.classList.add(currentTheme === 'light' ? 'dark' : 'light');
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    };
+
+    window.changeTheme = changeTheme;
+</script>
