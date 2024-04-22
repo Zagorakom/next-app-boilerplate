@@ -50,7 +50,8 @@ module.exports = {
 							800: "#530344",
 							900: "#290122",
 							DEFAULT: "#cf07ab",
-							foreground: "#0E0A13",
+							// foreground: "#0E0A13",
+							foreground: "#FCFBFD", // light color
 						},
 					},
 					// layout: {}

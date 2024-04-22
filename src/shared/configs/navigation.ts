@@ -21,6 +21,12 @@ const NAVIGATION_LIST: TNavigationList = [ // for header and burger menu
         isNew: false,
     },
     {
+        labelText: 'Broken link',
+        labelTranslationKey: 'labels.broken',
+        url: '/bar/wopiufowieuo',
+        isNew: false,
+    },
+    {
         labelText: 'Bar',
         labelTranslationKey: 'labels.bar',
         url: '/bar',

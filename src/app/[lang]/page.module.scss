@@ -6,7 +6,7 @@
   padding: 6rem;
   padding-bottom: 200px;
   min-height: 100vh;
-  background: linear-gradient(30deg, rgba(121, 74, 152, 0.6), rgb(140, 63, 173, 0.6)); // TEMP
+  // background: linear-gradient(30deg, rgba(121, 74, 152, 0.6), rgb(140, 63, 173, 0.6)); // TEMP
   @media (max-width: 700px) {
     justify-content: center;
   }
@@ -69,6 +69,12 @@
   }
 }
 
+.attention {
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 8px;
+}
+
 .gridCustom {
   display: grid;
   grid-template-columns: 4fr 2fr 1fr 1fr;
@@ -85,7 +91,7 @@
       align-items: center;
   }
   & > div {
-    border: 1px solid black;
+    border: 1px solid;
     padding: 10px;
     border-radius: 8px;
     box-sizing: border-box;

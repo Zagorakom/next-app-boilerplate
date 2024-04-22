@@ -2,6 +2,7 @@
 	"labels": {
         "about": "About",
         "foo": "Foo",
-        "bar": "Bar"
+        "bar": "Bar",
+        "broken": "Broken link"
     }
 }

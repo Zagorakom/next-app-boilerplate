@@ -40,14 +40,14 @@ export default function AboutPage() {
 
 			<div className={styles.grid}>
 				<h2>Loader example: {/* <span>-&gt;</span> */}</h2>
-				<h2 className={styles.modeName}>
+				<h2>
 					<div className={styles.spinnerWrapper}>
 						<Spinner color='secondary' className='mx-4 my-1' />
 						<Spinner color='primary' className='mx-4 my-1' />
 						<Spinner color='current' className='mx-4 my-1' />
 					</div>
 				</h2>
-				<h2 className={styles.modeName}>
+				<h2>
 					<div className={styles.spinnerWrapper}>
 						<Spinner size='lg' color='success' className='mx-4 my-1' />
 						<Spinner size='md' color='warning' className='mx-4 my-1' />
@@ -58,7 +58,7 @@ export default function AboutPage() {
 
 			<div className={styles.grid}>
 				<h2>Modal example: {/* <span>-&gt;</span> */}</h2>
-				<h2 className={styles.modeName}>
+				<h2>
 					<div className={styles.spinnerWrapper}>
 						<Button
 							color='primary'
@@ -70,7 +70,7 @@ export default function AboutPage() {
 					</div>
 				</h2>
 				<h2 className={cn(
-					styles.modeName,
+					// styles.modeName,
 					'flex flex-row justify-center items-center gap-4'
 				)}>
 					<HeartFilledIcon size={36} className="text-danger-700" />

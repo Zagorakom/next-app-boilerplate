@@ -7,6 +7,7 @@ import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import ClientCode from '@components/client-code';
 import { logBoldGreen } from '@utils/log';
+import cn from 'classnames';
 
 export default async function HomePage() {
 	// await sleep(2000); // simulate slow page load to show loading page
@@ -75,7 +76,10 @@ const Home: React.FC = () => {
 				</div>
 			</div>
 
-			<div className={styles.grid}>
+			<div className={cn(
+				styles.grid,
+				styles.attention,
+			)}>
 				<h2>APP MODE: {/* <span>-&gt;</span> */}</h2>
 				<h2 className={styles.modeName}>
 					{env_isDEV && 'DEV'}

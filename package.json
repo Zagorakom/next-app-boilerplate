@@ -21,7 +21,7 @@
     "serve-storybook": "serve storybook-static"
   },
   "dependencies": {
-    "@nextui-org/react": "2.2.10",
+    "@nextui-org/react": "2.3.5",
     "@react-aria/ssr": "3.9.2",
     "@react-aria/visually-hidden": "3.8.10",
     "@react-spring/web": "9.7.3",

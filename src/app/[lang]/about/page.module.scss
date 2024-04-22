@@ -17,7 +17,7 @@
     padding: 6rem;
     padding-bottom: 200px;
     min-height: 100vh;
-    background: linear-gradient(30deg, rgba(121, 74, 152, 0.6), rgb(140, 63, 173, 0.6)); // TEMP
+    // background: linear-gradient(30deg, rgba(121, 74, 152, 0.6), rgb(140, 63, 173, 0.6)); // TEMP
     @media (max-width: 700px) {
         padding: 16px;
         justify-content: center;
@@ -85,7 +85,7 @@
       font-weight: 700;
     }
     & > div, & > h2 {
-      border: 1px solid black;
+      border: 1px solid;
       padding: 10px;
       border-radius: 8px;
       box-sizing: border-box;
@@ -109,7 +109,7 @@
         align-items: center;
     }
     & > div {
-      border: 1px solid black;
+      border: 1px solid;
       padding: 10px;
       border-radius: 8px;
       box-sizing: border-box;

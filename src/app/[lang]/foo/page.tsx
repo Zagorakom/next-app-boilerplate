@@ -7,6 +7,8 @@ import { Button } from '@nextui-org/button';
 
 const FooPage: React.FC = () => {
     const { t, lang } = useTranslation('common');
+    // throw new Error('Test Error');
+    
     return (
         <div className={styles.foo}>
             <div className='w-full flex'>
@@ -16,7 +18,7 @@ const FooPage: React.FC = () => {
 			</div>
 
 			<div className={styles.grid}>
-				<h2 className='text-foreground-800'>Avatar example: {/* <span>-&gt;</span> */}</h2>
+				<h2 className='text-danger-800'>Avatar example: {/* <span>-&gt;</span> */}</h2>
                 <div className={styles.avatarsWrapper}>
                     <Avatar
                         avatarStyle={{
