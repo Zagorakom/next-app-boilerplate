@@ -1,0 +1,95 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Switch } from "@nextui-org/react";
+import { MoonIcon, SunIcon } from "@ui/Icons";
+
+<Meta title="Showcase/Switch" />
+
+# Switch Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <Switch defaultSelected aria-label="Automatic updates"/>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with label</h2>
+    <Unstyled>
+        <Switch defaultSelected>
+            Automatic updates
+        </Switch>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Switch defaultSelected size="sm">Small</Switch>
+            <Switch defaultSelected size="md">Medium</Switch>
+            <Switch defaultSelected size="lg">Large</Switch>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex gap-4 flex-wrap">
+            <Switch defaultSelected color="default">Default</Switch>
+            <Switch defaultSelected color="primary">Primary</Switch>
+            <Switch defaultSelected color="secondary">Secondary</Switch>
+            <Switch defaultSelected color="success">Success</Switch>
+            <Switch defaultSelected color="warning">Warning</Switch>
+            <Switch defaultSelected color="danger">Danger</Switch>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with thumb icon</h2>
+    <Unstyled>
+        <Switch
+            defaultSelected
+            size="lg"
+            color="secondary"
+            thumbIcon={({ isSelected, className }) =>
+                isSelected ? (
+                <SunIcon className={className} />
+                ) : (
+                <MoonIcon className={className} />
+                )
+            }
+        >
+            Dark mode
+        </Switch>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with icons</h2>
+    <Unstyled>
+        <Switch
+            defaultSelected
+            size="lg"
+            color="success"
+            startContent={<SunIcon />}
+            endContent={<MoonIcon />}
+        >
+            Dark mode
+        </Switch>
+    </Unstyled>
+</div>

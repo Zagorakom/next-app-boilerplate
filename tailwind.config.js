@@ -35,7 +35,7 @@ module.exports = {
 							900: "#1d0129",
 							DEFAULT: "#8f07cf",
 							// foreground: "#0E0A13",
-							foreground: "#FCFBFD", // light color
+							foreground: "#FCFBFD", // contrast color (light)
 						},
 						focus: "#7206a6",
 						secondary: {
@@ -51,15 +51,19 @@ module.exports = {
 							900: "#290122",
 							DEFAULT: "#cf07ab",
 							// foreground: "#0E0A13",
-							foreground: "#FCFBFD", // light color
+							foreground: "#FCFBFD", // contrast color (light)
 						},
+						success: {
+							foreground: "#FFFFFF", // contrast color (light)
+						}
 					},
 					// layout: {}
 				},
 				"dark-wb": {
 					extend: "dark", // <- inherit default values from dark theme
 					colors: {
-						background: "#251930",
+						// background: "#251930",
+						background: "#1D1426",
 						foreground: "#FFFEF7",
 						primary: {
 							50: "#1d0129",
@@ -90,6 +94,9 @@ module.exports = {
 							DEFAULT: "#d939bc",
 							foreground: "#FFFEF7",
 						},
+						success: {
+							foreground: "#FFFFFF", // contrast color (light)
+						}
 					},
 					// layout: {}
 				},

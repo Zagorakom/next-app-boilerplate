@@ -1,0 +1,503 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Select, SelectItem, Avatar } from '@nextui-org/react';
+import { animals, users } from './SelectData';
+import { PetIcon } from '@ui/Icons';
+
+<Meta title='Showcase/Select' />
+
+# Select Examples
+
+<div
+	style={{
+		marginBottom: '32px',
+	}}
+>
+	<h2>basic</h2>
+	<Unstyled>
+		<div className='flex w-full flex-wrap md:flex-nowrap gap-4'>
+			<Select
+				label='Select an animal'
+				className='max-w-xs'
+			>
+				{animals.map(animal => (
+					<SelectItem
+						key={animal.value}
+						value={animal.value}
+					>
+						{animal.label}
+					</SelectItem>
+				))}
+			</Select>
+			<Select
+				label='Favorite Animal'
+				placeholder='Select an animal'
+				className='max-w-xs'
+			>
+				{animals.map(animal => (
+					<SelectItem
+						key={animal.value}
+						value={animal.value}
+					>
+						{animal.label}
+					</SelectItem>
+				))}
+			</Select>
+		</div>
+	</Unstyled>
+</div>
+
+<div
+	style={{
+		marginBottom: '32px',
+	}}
+>
+	<h2>multiple</h2>
+	<Unstyled>
+		<Select
+			label='Favorite Animal'
+			placeholder='Select an animal'
+			selectionMode='multiple'
+			className='max-w-xs'
+		>
+			{animals.map(animal => (
+				<SelectItem
+					key={animal.value}
+					value={animal.value}
+				>
+					{animal.label}
+				</SelectItem>
+			))}
+		</Select>
+	</Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled items</h2>
+    <Unstyled>
+        <Select
+            label="Favorite Animal"
+            placeholder="Select an animal"
+            disabledKeys={["zebra", "tiger", "lion", "elephant", "crocodile", "whale"]}
+            className="max-w-xs"
+        >
+            {animals.map((animal) => (
+                <SelectItem key={animal.value} value={animal.value}>
+                    {animal.label}
+                </SelectItem>
+            ))}
+        </Select>
+    </Unstyled>
+
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>required</h2>
+    <Unstyled>
+        <Select
+            isRequired
+            label="Favorite Animal"
+            placeholder="Select an animal"
+            defaultSelectedKeys={["cat"]}
+            className="max-w-xs"
+        >
+            {animals.map((animal) => (
+                <SelectItem key={animal.value} value={animal.value}>
+                    {animal.label}
+                </SelectItem>
+            ))}
+        </Select>
+    </Unstyled>
+
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="w-full flex flex-col gap-4">
+            {["sm", "md", "lg"].map((size) => (
+                <div key={size} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    <Select 
+                        size={size}
+                        label="Select an animal" 
+                        className="max-w-xs" 
+                    >
+                        {animals.map((animal) => (
+                            <SelectItem key={animal.value} value={animal.value}>
+                                {animal.label}
+                            </SelectItem>
+                        ))}
+                    </Select>
+                    <Select
+                        size={size}
+                        label="Favorite Animal"
+                        placeholder="Select an animal"
+                        className="max-w-xs"
+                    >
+                        {animals.map((animal) => (
+                            <SelectItem key={animal.value} value={animal.value}>
+                                {animal.label}
+                            </SelectItem>
+                        ))}
+                    </Select>
+                </div>
+            ))}
+        </div>
+    </Unstyled>
+
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            {["default","primary","secondary","success","warning","danger"].map((color) => (
+                <Select
+                    key={color}
+                    color={color}
+                    label="Favorite Animal"
+                    placeholder="Select an animal"
+                    defaultSelectedKeys={["cat"]}
+                    className="max-w-xs"
+                >
+                    {animals.map((animal) => (
+                        <SelectItem key={animal.value} value={animal.value}>
+                            {animal.label}
+                        </SelectItem>
+                    ))}
+                </Select>
+            ))}
+        </div>
+    </Unstyled>
+
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className="w-full flex flex-col gap-4">
+            {["flat", "bordered", "underlined", "faded"].map((variant) => (
+                <div key={variant} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    <Select 
+                        variant={variant}
+                        label="Select an animal" 
+                        className="max-w-xs" 
+                    >
+                        {animals.map((animal) => (
+                            <SelectItem key={animal.value} value={animal.value}>
+                                {animal.label}
+                            </SelectItem>
+                        ))}
+                    </Select>
+                    <Select
+                        variant={variant}
+                        label="Favorite Animal"
+                        placeholder="Select an animal"
+                        className="max-w-xs"
+                    >
+                        {animals.map((animal) => (
+                            <SelectItem key={animal.value} value={animal.value}>
+                                {animal.label}
+                            </SelectItem>
+                        ))}
+                    </Select>
+                </div>
+            ))}
+        </div>
+    </Unstyled>
+
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            {["full","lg","md","sm","none"].map((r) => (
+                <Select
+                    key={r}
+                    radius={r}
+                    label="Favorite Animal"
+                    placeholder="Select an animal"
+                    defaultSelectedKeys={["cat"]}
+                    className="max-w-xs"
+                >
+                    {animals.map((animal) => (
+                        <SelectItem key={animal.value} value={animal.value}>
+                            {animal.label}
+                        </SelectItem>
+                    ))}
+                </Select>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>label placement</h2>
+    <Unstyled>
+        <div className="w-full flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+                <h3 className="text-default-500 text-small">Without placeholder</h3>
+                <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    {["inside","outside","outside-left"].map((placement) => (
+                        <Select
+                            labelPlacement={placement}
+                            label="Favorite Animal"
+                            className="max-w-xs"
+                        >
+                            {animals.map((animal) => (
+                                <SelectItem key={animal.value} value={animal.value}>
+                                    {animal.label}
+                                </SelectItem>
+                            ))}
+                        </Select>
+                    ))}
+                </div>
+            </div>  
+            <div className="flex flex-col gap-2">
+                <h3 className="text-default-500 text-small">With placeholder</h3>
+                <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    {["inside","outside","outside-left"].map((placement) => (
+                        <Select
+                            labelPlacement={placement}
+                            label="Favorite Animal"
+                            placeholder="Select an animal"
+                            className="max-w-xs"
+                        >
+                            {animals.map((animal) => (
+                                <SelectItem key={animal.value} value={animal.value}>
+                                    {animal.label}
+                                </SelectItem>
+                            ))}
+                        </Select>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>start content</h2>
+    <Unstyled>
+        <Select
+            label="Favorite Animal"
+            placeholder="Select an animal"
+            startContent={<PetIcon />}
+            defaultSelectedKeys={["cat"]}
+            className="max-w-xs"
+        >
+            {animals.map((animal) => (
+                <SelectItem key={animal.value} value={animal.value}>
+                    {animal.label}
+                </SelectItem>
+            ))}
+        </Select>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>item start content</h2>
+    <Unstyled>
+        <Select
+            className="max-w-xs"
+            label="Select country"
+        >
+            <SelectItem
+                key="argentina"
+                startContent={<Avatar alt="Argentina" className="w-6 h-6" src="https://flagcdn.com/ar.svg" />}
+            >Argentina</SelectItem>
+            <SelectItem
+                key="venezuela"
+                startContent={<Avatar alt="Venezuela" className="w-6 h-6" src="https://flagcdn.com/ve.svg" />}
+            >Venezuela</SelectItem>
+            <SelectItem
+                key="brazil"
+                startContent={<Avatar alt="Brazil" className="w-6 h-6" src="https://flagcdn.com/br.svg" />}
+            >Brazil</SelectItem>
+            <SelectItem
+                key="switzerland"
+                startContent={<Avatar alt="Switzerland" className="w-6 h-6" src="https://flagcdn.com/ch.svg" />}
+            >Switzerland</SelectItem>
+            <SelectItem
+                key="germany"
+                startContent={<Avatar alt="Germany" className="w-6 h-6" src="https://flagcdn.com/de.svg" />}
+            >Germany</SelectItem>
+            <SelectItem
+                key="spain"
+                startContent={<Avatar alt="Spain" className="w-6 h-6" src="https://flagcdn.com/es.svg" />}
+            >Spain</SelectItem>
+            <SelectItem
+                key="france"
+                startContent={<Avatar alt="France" className="w-6 h-6" src="https://flagcdn.com/fr.svg" />}
+            >France</SelectItem>
+            <SelectItem
+                key="italy"
+                startContent={<Avatar alt="Italy" className="w-6 h-6" src="https://flagcdn.com/it.svg" />}
+            >Italy</SelectItem>
+            <SelectItem
+                key="mexico"
+                startContent={<Avatar alt="Mexico" className="w-6 h-6" src="https://flagcdn.com/mx.svg" />}
+            >Mexico</SelectItem>
+        </Select>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>custom items</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            <Select
+                items={users}
+                label="Assigned to"
+                placeholder="Select a user"
+                labelPlacement="outside"
+                className="max-w-xs"
+                classNames={{
+                    base: 'mt-8'
+                }}
+            >
+                {(user) => (
+                    <SelectItem key={user.id} textValue={user.name} variant="flat">
+                        <div className="flex gap-2 items-center">
+                            <Avatar alt={user.name} className="flex-shrink-0" size="sm" src={user.avatar} />
+                            <div className="flex flex-col">
+                                <span className="text-small">{user.name}</span>
+                                <span className="text-tiny text-default-400">{user.email}</span>
+                            </div>
+                        </div>
+                    </SelectItem>
+                )}
+            </Select>
+            <Select
+                items={users}
+                label="Assigned to"
+                placeholder="Select a user"
+                labelPlacement="outside"
+                className="max-w-xs"
+                classNames={{
+                    base: 'mt-8'
+                }}
+                variant="faded"
+            >
+                {(user) => (
+                    <SelectItem key={user.id} textValue={user.name} color="secondary" variant="flat">
+                        <div className="flex gap-2 items-center">
+                            <Avatar alt={user.name} className="flex-shrink-0" size="sm" src={user.avatar} />
+                            <div className="flex flex-col">
+                                <span className="text-small">{user.name}</span>
+                                <span className="text-tiny text-default-400">{user.email}</span>
+                            </div>
+                        </div>
+                    </SelectItem>
+                )}
+            </Select>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>custom render value</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            <Select
+                items={users}
+                label="Assigned to"
+                placeholder="Select a user"
+                labelPlacement="outside"
+                classNames={{
+                    base: "max-w-xs mt-8",
+                    trigger: "h-12",
+                }}
+                renderValue={(items) => {
+                    return items.map((item) => (
+                        <div key={item.key} className="flex items-center gap-2">
+                            <Avatar
+                                alt={item.data.name}
+                                className="flex-shrink-0"
+                                size="sm"
+                                src={item.data.avatar}
+                            />
+                            <div className="flex flex-col">
+                                <span>{item.data.name}</span>
+                                <span className="text-default-500 text-tiny">({item.data.email})</span>
+                            </div>
+                        </div>
+                    ));
+                }}
+            >
+                {(user) => (
+                    <SelectItem key={user.id} textValue={user.name} variant="flat">
+                        <div className="flex gap-2 items-center">
+                            <Avatar alt={user.name} className="flex-shrink-0" size="sm" src={user.avatar} />
+                            <div className="flex flex-col">
+                                <span className="text-small">{user.name}</span>
+                                <span className="text-tiny text-default-400">{user.email}</span>
+                            </div>
+                        </div>
+                    </SelectItem>
+                )}
+            </Select>
+            <Select
+                items={users}
+                label="Assigned to"
+                placeholder="Select a user"
+                labelPlacement="outside"
+                classNames={{
+                    base: "max-w-xs mt-8",
+                    trigger: "h-12",
+                }}
+                variant="faded"
+                renderValue={(items) => {
+                    return items.map((item) => (
+                        <div key={item.key} className="flex items-center gap-2">
+                            <Avatar
+                                alt={item.data.name}
+                                className="flex-shrink-0"
+                                size="sm"
+                                src={item.data.avatar}
+                            />
+                            <div className="flex flex-col">
+                                <span>{item.data.name}</span>
+                                <span className="text-default-500 text-tiny">({item.data.email})</span>
+                            </div>
+                        </div>
+                    ));
+                }}
+            >
+                {(user) => (
+                    <SelectItem key={user.id} textValue={user.name} color="secondary" variant="flat">
+                        <div className="flex gap-2 items-center">
+                            <Avatar alt={user.name} className="flex-shrink-0" size="sm" src={user.avatar} />
+                            <div className="flex flex-col">
+                                <span className="text-small">{user.name}</span>
+                                <span className="text-tiny text-default-400">{user.email}</span>
+                            </div>
+                        </div>
+                    </SelectItem>
+                )}
+            </Select>
+        </div>
+    </Unstyled>
+</div>

@@ -1,0 +1,90 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { Pagination } from "@nextui-org/react";
+
+<Meta title="Showcase/Pagination" />
+
+# Pagination Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <Pagination total={10} initialPage={1} />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled</h2>
+    <Unstyled>
+        <Pagination isDisabled total={10} initialPage={1} />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4 items-center">
+            {["sm", "md", "lg"].map((size) => (
+                <Pagination key={size} total={10} initialPage={1} size={size} />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4 items-center">
+            {["primary", "secondary", "success", "warning", "danger"].map((color) => (
+                <Pagination key={color} total={10} initialPage={1} color={color} />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4 items-center">
+            {["flat", "bordered", "faded", "light"].map((variant) => (
+                <Pagination key={variant} total={10} initialPage={1} variant={variant} />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with controls</h2>
+    <Unstyled>
+        <Pagination showControls total={10} initialPage={1} />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>pagination loop</h2>
+    <Unstyled>
+        <Pagination loop showControls color="success" total={5} initialPage={1} />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>compact pagination</h2>
+    <Unstyled>
+        <Pagination isCompact showControls total={10} initialPage={1} />
+    </Unstyled>
+</div>

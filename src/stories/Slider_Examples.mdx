@@ -1,0 +1,348 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Slider } from "@nextui-org/react";
+import { VolumeLowIcon, VolumeHighIcon } from "@ui/Icons";
+
+<Meta title="Showcase/Slider" />
+
+# Slider Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <Slider 
+            label="Temperature"
+            step={0.01}
+            maxValue={1}
+            minValue={0}
+            defaultValue={0.4}
+            className="max-w-md"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-6 w-full max-w-md">
+            <Slider   
+                size="sm"
+                step={0.01}
+                maxValue={1}
+                minValue={0}
+                aria-label="Temperature"
+                defaultValue={0.2}
+                className="max-w-md my-2"
+            />
+            <Slider   
+                size="md"
+                step={0.01}
+                maxValue={1}
+                minValue={0}
+                aria-label="Temperature"
+                defaultValue={0.4}
+                className="max-w-md my-2"
+            />
+            <Slider   
+                size="lg"
+                step={0.01}
+                maxValue={1}
+                minValue={0}
+                aria-label="Temperature"
+                defaultValue={0.6}
+                className="max-w-md my-2"
+            />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-6 w-full max-w-md">
+            {["full","lg","md","sm","none"].map((r) => (
+                <Slider
+                    key={r}
+                    radius={r}
+                    step={0.01}
+                    maxValue={1}
+                    minValue={0}
+                    defaultValue={0.7}
+                    aria-label="Temperature"
+                    className="max-w-md my-2"
+                />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-6 w-full max-w-md">
+            {["foreground","primary","secondary","success","warning","danger"].map((color) => (
+                <Slider
+                    key={color}
+                    color={color}
+                    step={0.01}
+                    maxValue={1}
+                    minValue={0}
+                    defaultValue={0.7}
+                    aria-label="Temperature"
+                    className="max-w-md my-2"
+                />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>vertical</h2>
+    <Unstyled>
+        <div className="flex flex-row  max-w-md h-[348px] gap-6 w-full" style={{
+            height: "348px"
+        }}>
+            <Slider   
+                size="sm"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                orientation="vertical"
+                aria-label="Temperature"
+                defaultValue={0.2}
+                className="mx-2"
+            />
+            <Slider   
+                size="md"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                orientation="vertical"
+                aria-label="Temperature"
+                defaultValue={0.4}
+                className="mx-2"
+            />
+            <Slider   
+                size="lg"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                orientation="vertical"
+                aria-label="Temperature"
+                defaultValue={0.6}
+                className="mx-2"
+            />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with visible steps</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-6 w-full max-w-md">
+            <Slider   
+                size="sm"
+                step={0.1}
+                color="secondary"
+                label="Temperature"
+                showSteps={true} 
+                maxValue={1} 
+                minValue={0} 
+                defaultValue={0.2}
+                className="max-w-md my-2" 
+            />
+            <Slider   
+                size="md"
+                step={0.1}
+                color="danger"
+                label="Temperature"
+                showSteps={true} 
+                maxValue={1} 
+                minValue={0} 
+                defaultValue={0.4}
+                className="max-w-md my-2" 
+            />
+            <Slider   
+                size="lg"
+                step={0.1}
+                color="foreground"
+                label="Temperature"
+                showSteps={true} 
+                maxValue={1} 
+                minValue={0} 
+                defaultValue={0.6}
+                className="max-w-md my-2" 
+            />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with marks</h2>
+    <Unstyled>
+        <Slider 
+            label="Select a value" 
+            color="foreground"
+            size="sm"
+            step={10} 
+            marks={[
+                {
+                    value: 20,
+                    label: "20%",
+                },
+                {
+                    value: 50,
+                    label: "50%",
+                },
+                {
+                    value: 80,
+                    label: "80%",
+                },
+            ]}
+            defaultValue={20}
+            className="max-w-md"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>range</h2>
+    <Unstyled>
+        <Slider 
+            label="Price Range"
+            step={50} 
+            minValue={0} 
+            maxValue={1000} 
+            defaultValue={[100, 500]} 
+            formatOptions={{style: "currency", currency: "USD"}}
+            className="max-w-md"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>fill offset</h2>
+    <Unstyled>
+        <Slider 
+            label="Exposure" 
+            size="sm"
+            color="warning"
+            step={0.01} 
+            maxValue={5} 
+            minValue={-5} 
+            fillOffset={0}
+            defaultValue={1.5}
+            className="max-w-md"
+            formatOptions={{signDisplay: 'always'}}
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with tooltip</h2>
+    <Unstyled>
+        <Slider 
+            label="Select a value" 
+            showTooltip={true}
+            step={0.1} 
+            formatOptions={{style: "percent"}}
+            maxValue={1}
+            minValue={0}
+            marks={[
+                {
+                    value: 0.2,
+                    label: "20%",
+                },
+                {
+                    value: 0.5,
+                    label: "50%",
+                },
+                {
+                    value: 0.8,
+                    label: "80%",
+                },
+            ]}
+            defaultValue={0.2}
+            className="max-w-md"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with outline</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-6 w-full max-w-md">
+            <Slider   
+                size="sm"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                color="secondary"
+                showOutline={true}
+                aria-label="Temperature"
+                defaultValue={0.2}
+                className="max-w-md my-2" 
+            />
+            <Slider   
+                size="md"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                color="danger"
+                showOutline={true}
+                aria-label="Temperature"
+                defaultValue={0.4}
+                className="max-w-md my-2" 
+            />
+            <Slider   
+                size="lg"
+                step={0.01} 
+                maxValue={1} 
+                minValue={0} 
+                color="foreground"
+                showOutline={true}
+                aria-label="Temperature"
+                defaultValue={0.6}
+                className="max-w-md my-2" 
+            />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>start & end content</h2>
+    <Unstyled>
+        <Slider 
+            aria-label="Volume"
+            size="lg"
+            color="success"
+            startContent={<VolumeLowIcon className="text-2xl" />}
+            endContent={<VolumeHighIcon className="text-2xl" />}
+            className="max-w-md"
+            defaultValue={40}
+        />
+    </Unstyled>
+</div>

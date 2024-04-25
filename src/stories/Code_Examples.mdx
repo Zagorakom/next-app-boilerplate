@@ -1,0 +1,49 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { Code } from "@nextui-org/react";
+import * as CodeStories from './Code.stories';
+
+<Meta title="Showcase/Code" />
+
+# Code Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            <Story of={CodeStories.Small} />
+            <Story of={CodeStories.Medium} />
+            <Story of={CodeStories.Large} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+        <div className="flex flex-wrap gap-4">
+            <Story of={CodeStories.Primary} />
+            <Story of={CodeStories.Secondary} />
+            <Story of={CodeStories.Default} />
+            <Story of={CodeStories.Success} />
+            <Story of={CodeStories.Warning} />
+            <Story of={CodeStories.Danger} />
+        </div>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            <Story of={CodeStories.RadiusFull} />
+            <Story of={CodeStories.RadiusLg} />
+            <Story of={CodeStories.RadiusMd} />
+            <Story of={CodeStories.RadiusSm} />
+            <Story of={CodeStories.RadiusNone} />
+        </div>
+    </Unstyled>
+</div>

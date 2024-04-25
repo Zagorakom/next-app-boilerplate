@@ -1,0 +1,66 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { RadioGroup, Radio } from "@nextui-org/react";
+
+<Meta title="Showcase/Radio" />
+
+# Radio Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <RadioGroup
+            label="Select your city"
+        >
+            <Radio value="buenos-aires">Buenos Aires</Radio>
+            <Radio isDisabled value="sydney">Sydney (Disabled)</Radio>
+            <Radio value="san-francisco">San Francisco</Radio>
+            <Radio value="london">London</Radio>
+            <Radio value="tokyo">Tokyo</Radio>
+        </RadioGroup>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with description</h2>
+    <Unstyled>
+        <RadioGroup
+            label="Select your city"
+            color="warning"
+        >
+            <Radio value="buenos-aires" description="The capital of Argentina">
+                Buenos Aires
+            </Radio>
+            <Radio value="canberra" description="The capital of Australia">
+                Canberra
+            </Radio>
+            <Radio value="london" description="The capital of England">
+                London
+            </Radio>
+            <Radio value="tokyo" description="The capital of Japan">
+                Tokyo
+            </Radio>
+        </RadioGroup>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>horizontal</h2>
+    <Unstyled>
+        <RadioGroup
+            label="Select your city"
+            orientation="horizontal"
+        >
+            <Radio value="buenos-aires">Buenos Aires</Radio>
+            <Radio value="sydney">Sydney</Radio>
+            <Radio value="san-francisco">San Francisco</Radio>
+            <Radio value="london">London</Radio>
+            <Radio value="tokyo">Tokyo</Radio>
+        </RadioGroup>
+    </Unstyled>
+</div>

@@ -1,0 +1,325 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownSection, DropdownItem, Button, cn, Avatar, User } from "@nextui-org/react";
+import { AddNoteIcon, CopyDocumentIcon, EditDocumentIcon, DeleteDocumentIcon } from "@ui/Icons";
+
+<Meta title="Showcase/Dropdown" />
+
+# Dropdown Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <Dropdown>
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Static Actions">
+                <DropdownItem key="new">New file</DropdownItem>
+                <DropdownItem key="copy">Copy link</DropdownItem>
+                <DropdownItem key="edit">Edit file</DropdownItem>
+                <DropdownItem key="delete" className="text-danger" color="danger">
+                    Delete file
+                </DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled keys</h2>
+    <Unstyled>
+        <Dropdown >
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu aria-label="Example with disabled actions" disabledKeys={["edit", "delete"]}>
+                <DropdownItem key="new">New file</DropdownItem>
+                <DropdownItem key="copy">Copy link</DropdownItem>
+                <DropdownItem key="edit">Edit file</DropdownItem>
+                <DropdownItem key="delete" className="text-danger" color="danger">
+                    Delete file
+                </DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            {["solid", "bordered", "light", "flat", "faded", "shadow"].map((variant) => (
+                <Dropdown>
+                    <DropdownTrigger>
+                        <Button 
+                            color="primary"
+                            variant={variant}
+                            className="capitalize"
+                        >
+                            {variant}
+                        </Button>
+                    </DropdownTrigger>
+                    <DropdownMenu 
+                        aria-label="Dropdown Variants"
+                        color="primary" 
+                        variant={variant}
+                    >
+                        <DropdownItem key="new">New file</DropdownItem>
+                        <DropdownItem key="copy">Copy link</DropdownItem>
+                        <DropdownItem key="edit">Edit file</DropdownItem>
+                        <DropdownItem key="delete" className="text-danger" color="danger">
+                            Delete file
+                        </DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with shortcut</h2>
+    <Unstyled>
+        <Dropdown>
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu variant="flat" aria-label="Dropdown menu with shortcut">
+                <DropdownItem key="new" shortcut="⌘N">New file</DropdownItem>
+                <DropdownItem key="copy" shortcut="⌘C">Copy link</DropdownItem>
+                <DropdownItem key="edit" shortcut="⌘⇧E">Edit file</DropdownItem>
+                <DropdownItem key="delete" shortcut="⌘⇧D" className="text-danger" color="danger">
+                    Delete file
+                </DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with icons</h2>
+    <Unstyled>
+        <Dropdown>
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu variant="faded" aria-label="Dropdown menu with icons">
+                <DropdownItem
+                    key="new"
+                    shortcut="⌘N"
+                    startContent={<AddNoteIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                >
+                    New file
+                </DropdownItem>
+                <DropdownItem
+                    key="copy"
+                    shortcut="⌘C"
+                    startContent={<CopyDocumentIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                >
+                    Copy link
+                </DropdownItem>
+                <DropdownItem
+                    key="edit"
+                    shortcut="⌘⇧E"
+                    startContent={<EditDocumentIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                >
+                    Edit file
+                </DropdownItem>
+                <DropdownItem
+                    key="delete"
+                    className="text-danger"
+                    color="danger"
+                    shortcut="⌘⇧D"
+                    startContent={<DeleteDocumentIcon className={cn("text-xl text-default-500 pointer-events-none flex-shrink-0", "text-danger")} />}
+                >
+                    Delete file
+                </DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with description and sections</h2>
+    <Unstyled>
+        <Dropdown>
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu variant="faded" color="success" aria-label="Dropdown menu with description">
+                <DropdownSection title="Actions" showDivider>  
+                    <DropdownItem
+                        key="new"
+                        shortcut="⌘N"
+                        description="Create a new file"
+                        startContent={<AddNoteIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                    >
+                        New file
+                    </DropdownItem>
+                    <DropdownItem
+                        key="copy"
+                        shortcut="⌘C"
+                        description="Copy the file link"
+                        startContent={<CopyDocumentIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                    >
+                        Copy link
+                    </DropdownItem>
+                    <DropdownItem
+                        key="edit"
+                        shortcut="⌘⇧E"
+                        description="Allows you to edit the file"
+                        startContent={<EditDocumentIcon className="text-xl text-default-500 pointer-events-none flex-shrink-0" />}
+                    >
+                        Edit file
+                    </DropdownItem>
+                </DropdownSection>
+                <DropdownSection title="Danger zone">  
+                    <DropdownItem
+                        key="delete"
+                        className="text-danger"
+                        variant="flat"
+                        color="danger"
+                        shortcut="⌘⇧D"
+                        description="Permanently delete the file"
+                        startContent={<DeleteDocumentIcon className={cn("text-xl text-default-500 pointer-events-none flex-shrink-0", "text-danger")} />}
+                    >
+                        Delete file
+                    </DropdownItem>
+                </DropdownSection>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>custom trigger</h2>
+    <Unstyled>
+        <div className="flex items-center gap-4">
+            <Dropdown placement="bottom-end">
+                <DropdownTrigger>
+                    <Avatar
+                        isBordered
+                        as="button"
+                        className="transition-transform"
+                        src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                    />
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Profile Actions" variant="flat">
+                    <DropdownItem key="profile" className="h-14 gap-2">
+                        <p className="font-semibold">Signed in as</p>
+                        <p className="font-semibold">zoey@example.com</p>
+                    </DropdownItem>
+                    <DropdownItem key="settings">
+                        My Settings
+                    </DropdownItem>
+                    <DropdownItem key="team_settings">Team Settings</DropdownItem>
+                    <DropdownItem key="analytics">
+                        Analytics
+                    </DropdownItem>
+                    <DropdownItem key="system">System</DropdownItem>
+                    <DropdownItem key="configurations">Configurations</DropdownItem>
+                    <DropdownItem key="help_and_feedback">
+                        Help & Feedback
+                    </DropdownItem>
+                    <DropdownItem key="logout" color="danger">
+                        Log Out
+                    </DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+            <Dropdown placement="bottom-start">
+                <DropdownTrigger>
+                    <User
+                        as="button"
+                        avatarProps={{
+                        isBordered: true,
+                        src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+                        }}
+                        className="transition-transform"
+                        description="@tonyreichert"
+                        name="Tony Reichert"
+                    />
+                </DropdownTrigger>
+                <DropdownMenu aria-label="User Actions" variant="flat">
+                    <DropdownItem key="profile" className="h-14 gap-2">
+                        <p className="font-bold">Signed in as</p>
+                        <p className="font-bold">@tonyreichert</p>
+                    </DropdownItem>
+                    <DropdownItem key="settings">
+                        My Settings
+                    </DropdownItem>
+                    <DropdownItem key="team_settings">Team Settings</DropdownItem>
+                    <DropdownItem key="analytics">
+                        Analytics
+                    </DropdownItem>
+                    <DropdownItem key="system">System</DropdownItem>
+                    <DropdownItem key="configurations">Configurations</DropdownItem>
+                    <DropdownItem key="help_and_feedback">
+                        Help & Feedback
+                    </DropdownItem>
+                    <DropdownItem key="logout" color="danger">
+                        Log Out
+                    </DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>changing the backdrop</h2>
+    <Unstyled>
+        <Dropdown backdrop="blur">
+            <DropdownTrigger>
+                <Button 
+                    variant="bordered" 
+                >
+                    Open Menu
+                </Button>
+            </DropdownTrigger>
+            <DropdownMenu variant="faded" aria-label="Static Actions">
+                <DropdownItem key="new">New file</DropdownItem>
+                <DropdownItem key="copy">Copy link</DropdownItem>
+                <DropdownItem key="edit">Edit file</DropdownItem>
+                <DropdownItem key="delete" className="text-danger" color="danger">
+                    Delete file
+                </DropdownItem>
+            </DropdownMenu>
+        </Dropdown>
+    </Unstyled>
+</div>

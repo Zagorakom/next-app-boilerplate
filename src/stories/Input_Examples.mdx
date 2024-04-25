@@ -1,0 +1,375 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { Input } from "@nextui-org/react";
+import { EyeFilledIcon, EyeSlashFilledIcon, MailIcon } from "@ui/Icons";
+
+<Meta title="Showcase/Input" />
+
+# Input Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+            <Input type="email" label="Email" className="max-w-xs" />
+            <Input type="email" label="Email" placeholder="Enter your email" className="max-w-xs" />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled</h2>
+    <Unstyled>
+        <Input
+            isDisabled
+            type="email"
+            label="Email"
+            defaultValue="junior@nextui.org"
+            className="max-w-xs"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>read only</h2>
+    <Unstyled>
+        <Input
+            isReadOnly
+            type="email"
+            label="Email"
+            variant="bordered"
+            defaultValue="junior@nextui.org"
+            className="max-w-xs"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>required</h2>
+    <Unstyled>
+        <Input
+            isRequired
+            type="email"
+            label="Email"
+            defaultValue="junior@nextui.org"
+            className="max-w-xs"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="w-full flex flex-col gap-4">
+            {["sm", "md", "lg"].map((size) => (
+                <div key={size} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    <Input size={size} type="email" label="Email" className="max-w-xs" />
+                    <Input size={size} type="email" label="Email" placeholder="Enter your email" className="max-w-xs" />
+                </div>
+            ))}  
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            {["default","primary","secondary","success","warning","danger"].map((color) => (
+                <Input
+                    key={color}
+                    type="email"
+                    color={color}
+                    label="Email"
+                    placeholder="Enter your email"
+                    defaultValue="junior@nextui.org"
+                    className="max-w-xs"
+                />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className="w-full flex flex-col gap-4">
+            {["flat", "bordered", "underlined", "faded"].map((variant) => (
+                <div key={variant} className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    <Input type="email" variant={variant} label="Email" className="max-w-xs" />
+                    <Input type="email" variant={variant} label="Email" placeholder="Enter your email" className="max-w-xs" />
+                </div>
+            ))}  
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="w-full flex flex-row flex-wrap gap-4">
+            {["full","lg","md","sm","none"].map((r) => (
+                <Input
+                    key={r}
+                    radius={r}
+                    type="email"
+                    label="Email"
+                    placeholder="Enter your email"
+                    defaultValue="junior@nextui.org"
+                    className="max-w-xs"
+                />
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>label placements</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
+                <h3 className="text-default-500 text-small">Without placeholder</h3>
+                <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    {["inside","outside","outside-left"].map((placement) => (
+                        <Input
+                            key={placement}
+                            type="email"
+                            label="Email"
+                            labelPlacement={placement}
+                            description={placement}
+                            className="max-w-xs"
+                        />
+                    ))}
+                </div>
+            </div>  
+            <div className="flex flex-col gap-2">
+                <h3 className="text-default-500 text-small">With placeholder</h3>
+                <div className="flex w-full flex-wrap items-end md:flex-nowrap mb-6 md:mb-0 gap-4">
+                    {["inside","outside","outside-left"].map((placement) => (
+                        <Input
+                            key={placement}
+                            type="email"
+                            label="Email"
+                            labelPlacement={placement}
+                            placeholder="Enter your email"
+                            description={placement}
+                            className="max-w-xs"
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>password</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-4">
+            <Input
+                label="Password"
+                variant="bordered"
+                placeholder="Enter your password"
+                endContent={
+                    <button className="focus:outline-none" type="button" onClick={() => console.log('hide')}>
+                        <EyeSlashFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                    </button>
+                }
+                type={"text"}
+                className="max-w-xs"
+            />
+            <Input
+                label="Password"
+                variant="bordered"
+                placeholder="Enter your password"
+                endContent={
+                    <button className="focus:outline-none" type="button" onClick={() => console.log('show')}>
+                        <EyeFilledIcon className="text-2xl text-default-400 pointer-events-none" />
+                    </button>
+                }
+                type={"password"}
+                className="max-w-xs"
+            />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>clearable</h2>
+    <Unstyled>
+        <Input
+            isClearable
+            type="email"
+            label="Email"
+            variant="bordered"
+            placeholder="Enter your email"
+            defaultValue="junior@nextui.org"
+            onClear={() => console.log("input cleared")}
+            className="max-w-xs"
+        />
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>startContent and endContent</h2>
+    <Unstyled>
+        <div className="flex flex-col gap-4">
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                <Input
+                    type="email"
+                    label="Email"
+                    placeholder="you@example.com"
+                    labelPlacement="outside"
+                    startContent={
+                        <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    }
+                    className="max-w-xs"
+                />
+                <Input
+                    type="number"
+                    label="Price"
+                    placeholder="0.00"
+                    labelPlacement="outside"
+                    startContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">$</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+                <Input
+                    type="url"
+                    label="Website"
+                    placeholder="doit.org"
+                    labelPlacement="outside"
+                    startContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">https://</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                <Input
+                    type="email"
+                    label="Email"
+                    placeholder="you@example.com"
+                    labelPlacement="outside"
+                    endContent={
+                        <MailIcon className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+                    }
+                    className="max-w-xs"
+                />
+                <Input
+                    type="number"
+                    label="Price"
+                    placeholder="0.00"
+                    labelPlacement="outside"
+                    endContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">$</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+                <Input
+                    type="url"
+                    label="Website"
+                    placeholder="doit"
+                    labelPlacement="outside"
+                    endContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">.org/</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4">
+                <Input
+                    label="Email"
+                    placeholder="doit"
+                    labelPlacement="outside"
+                    startContent={
+                        <MailIcon className="text-xl text-default-400 pointer-events-none flex-shrink-0" />
+                    }
+                    endContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">@gmail.com</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+                <Input
+                    label="Price"
+                    placeholder="0.00"
+                    labelPlacement="outside"
+                    startContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">$</span>
+                        </div>
+                    }
+                    endContent={
+                        <div className="flex items-center">
+                        <label className="sr-only" htmlFor="currency">
+                            Currency
+                        </label>
+                        <select
+                            className="outline-none border-0 bg-transparent text-default-400 text-small"
+                            id="currency"
+                            name="currency"
+                        >
+                            <option>USD</option>
+                            <option>ARS</option>
+                            <option>EUR</option>
+                        </select>
+                        </div>
+                    }
+                    className="max-w-xs"
+                    type="number"
+                />
+                <Input
+                    type="url"
+                    label="Website"
+                    placeholder="doit"
+                    labelPlacement="outside"
+                    startContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">https://</span>
+                        </div>
+                    }
+                    endContent={
+                        <div className="pointer-events-none flex items-center">
+                        <span className="text-default-400 text-small">.org</span>
+                        </div>
+                    }
+                    className="max-w-xs"
+                />
+            </div>
+        </div>
+    </Unstyled>
+</div>

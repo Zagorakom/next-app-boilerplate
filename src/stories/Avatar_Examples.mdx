@@ -1,0 +1,175 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Avatar, AvatarGroup, AvatarIcon } from "@nextui-org/react";
+import { UserIcon, CameraIcon, HeartIcon } from '@ui/Icons';
+
+<Meta title="Showcase/Avatar" />
+
+# Avatar Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex gap-4 items-center">
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" className="w-6 h-6 text-tiny"  />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" size="sm" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" size="md" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" size="lg" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" className="w-20 h-20 text-large" style={{
+                fontSize: 'var(--nextui-font-size-large)',
+                lineHeight: 'var(--nextui-line-height-large)',
+                width: '80px',
+                height: '80px',
+            }} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>fallbacks</h2>
+    <Unstyled>
+        <div className="flex gap-3 items-center">
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar name='Joe' src='https://images.unsplash.com/broken' />
+            <Avatar showFallback name='Jane' src='https://images.unsplash.com/broken' />
+            <Avatar name='Joe Smith' />
+            <Avatar showFallback src='https://images.unsplash.com/broken' />
+            <Avatar showFallback src='https://images.unsplash.com/broken' fallback={
+                <CameraIcon className="animate-pulse w-6 h-6 text-default-500" fill="currentColor" size={20} />
+            } />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>bordered</h2>
+    <Unstyled>
+        <div className="flex gap-4 items-center">
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar isBordered src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="flex gap-4 items-center">
+            <Avatar isBordered radius="full" src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+            <Avatar isBordered radius="lg" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar isBordered radius="md" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar isBordered radius="sm" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex gap-4 items-center">
+            <Avatar isBordered color="default" src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar isBordered color="primary" src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar isBordered color="secondary" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar isBordered color="success" src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar isBordered color="warning" src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar isBordered color="danger" src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>group</h2>
+    <Unstyled>
+        <AvatarGroup isBordered className="justify-start">
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </AvatarGroup>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>group (max and total)</h2>
+    <Unstyled>
+        <AvatarGroup isBordered max={3} total={10} className="justify-start">
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </AvatarGroup>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>group (custom count)</h2>
+    <Unstyled>
+        <AvatarGroup
+            isBordered
+            max={3}
+            total={10}
+            className="justify-start"
+            renderCount={(count) => (
+                <p className="text-small text-foreground font-medium ml-2">+{count} others</p>
+            )}
+        >
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+        </AvatarGroup>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>group grid</h2>
+    <Unstyled>
+        <AvatarGroup isBordered isGrid max={7}>
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026708c" />
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026702d" />
+            <Avatar src="https://i.pravatar.cc/300?u=a042581f4f29026707d" />
+            <Avatar src="https://i.pravatar.cc/300?u=a042581f4e29026710d" />
+            <Avatar src="https://i.pravatar.cc/300?u=a042581f4e29026712d" />
+        </AvatarGroup>
+    </Unstyled>
+</div>
+
+{/* <div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+
+    </Unstyled>
+</div> */}

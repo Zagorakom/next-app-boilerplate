@@ -1,0 +1,213 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Tabs, Tab, Card, CardBody } from "@nextui-org/react";
+import { GalleryIcon, MusicIcon, VideoIcon } from "@ui/Icons";
+
+<Meta title="Showcase/Tabs" />
+
+# Tabs Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>basic</h2>
+    <Unstyled>
+        <div className="flex w-full flex-col">
+            <Tabs aria-label="Options">
+                <Tab key="photos" title="Photos">
+                <Card>
+                    <CardBody>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </CardBody>
+                </Card>  
+                </Tab>
+                <Tab key="music" title="Music">
+                <Card>
+                    <CardBody>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </CardBody>
+                </Card>  
+                </Tab>
+                <Tab key="videos" title="Videos">
+                <Card>
+                    <CardBody>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </CardBody>
+                </Card>  
+                </Tab>
+            </Tabs>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled item</h2>
+    <Unstyled>
+        <div className="flex w-full flex-col">
+            <Tabs disabledKeys={["music"]} aria-label="Disabled Options">
+                <Tab key="photos" title="Photos">
+                <Card>
+                    <CardBody>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </CardBody>
+                </Card>  
+                </Tab>
+                <Tab key="music" title="Music">
+                <Card>
+                    <CardBody>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </CardBody>
+                </Card>  
+                </Tab>
+                <Tab key="videos" title="Videos">
+                <Card>
+                    <CardBody>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </CardBody>
+                </Card>  
+                </Tab>
+            </Tabs>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            {["sm","md","lg"].map((size) => (
+                <Tabs key={size} size={size} aria-label="Tabs sizes">
+                    <Tab key="photos" title={`size ${size}`}/>
+                    <Tab key="music" title={`size ${size}`}/>
+                    <Tab key="videos" title={`size ${size}`}/>
+                </Tabs>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            {["full","lg","md","sm","none"].map((radius) => (
+                <Tabs key={radius} radius={radius} aria-label="Tabs radius">
+                    <Tab key="photos" title={`radius ${radius}`}/>
+                    <Tab key="music" title={`radius ${radius}`}/>
+                    <Tab key="videos" title={`radius ${radius}`}/>
+                </Tabs>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            {["default","primary","secondary","success","warning","danger"].map((color) => (
+                <Tabs key={color} color={color} aria-label="Tabs colors" radius="full">
+                    <Tab key="photos" title={`${color}`}/>
+                    <Tab key="music" title={`${color}`}/>
+                    <Tab key="videos" title={`${color}`}/>
+                </Tabs>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className="flex flex-wrap gap-4">
+            {["solid","underlined","bordered","light"].map((variant) => (
+                <Tabs key={variant} variant={variant} aria-label="Tabs variants">
+                    <Tab key="photos" title={`${variant}`}/>
+                    <Tab key="music" title={`${variant}`}/>
+                    <Tab key="videos" title={`${variant}`}/>
+                </Tabs>
+            ))}
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with icons</h2>
+    <Unstyled>
+        <div className="flex w-full flex-col">
+            <Tabs aria-label="Options" color="primary" variant="bordered">
+                <Tab
+                    key="photos"
+                    title={
+                        <div className="flex items-center space-x-2 gap-2">
+                            <GalleryIcon/>
+                            <span>Photos</span>
+                        </div>
+                    }
+                />
+                <Tab
+                    key="music"
+                    title={
+                        <div className="flex items-center space-x-2 gap-2">
+                            <MusicIcon/>
+                            <span>Music</span>
+                        </div>
+                    }
+                />
+                <Tab
+                    key="videos"
+                    title={
+                        <div className="flex items-center space-x-2 gap-2">
+                            <VideoIcon/>
+                            <span>Videos</span>
+                        </div>
+                    }
+                />
+            </Tabs>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>vertical</h2>
+    <Unstyled>
+        <div className="flex w-full flex-col">
+            <Tabs aria-label="Options" isVertical={true}>
+                <Tab key="photos" title="Photos">
+                    <Card>
+                        <CardBody>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </CardBody>
+                    </Card>  
+                </Tab>
+                <Tab key="music" title="Music">
+                    <Card>
+                        <CardBody>
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </CardBody>
+                    </Card>  
+                </Tab>
+                <Tab key="videos" title="Videos">
+                    <Card>
+                        <CardBody>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </CardBody>
+                    </Card>  
+                </Tab>
+            </Tabs>
+        </div>
+    </Unstyled>
+</div>

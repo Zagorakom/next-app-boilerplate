@@ -4,18 +4,33 @@
 
 <script>
     const htmlTag = document.querySelector('html');
-    htmlTag.classList.add("light");
+    htmlTag.classList.add("light-wb");
     htmlTag.classList.add("text-foreground");
     htmlTag.classList.add("bg-background");
 
-    let currentTheme = 'light';
+    let currentTheme = 'light-wb';
 
     const changeTheme = () => {
-        htmlTag.classList.remove("light");
-        htmlTag.classList.remove("dark");
-        htmlTag.classList.add(currentTheme === 'light' ? 'dark' : 'light');
-        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        htmlTag.classList.remove("light-wb");
+        htmlTag.classList.remove("dark-wb");
+        htmlTag.classList.add(currentTheme === 'light-wb' ? 'dark-wb' : 'light-wb');
+        currentTheme = currentTheme === 'light-wb' ? 'dark-wb' : 'light-wb';
     };
 
     window.changeTheme = changeTheme;
 </script>
+
+<style>
+    .sbdocs {
+        background-color: inherit !important;
+        background: inherit !important;
+    }
+    @keyframes pulse {
+        50% {
+            opacity: .5;
+        }
+    }
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+</style>

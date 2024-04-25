@@ -1,0 +1,122 @@
+import { Meta, Primary, Controls, Story, Unstyled } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+import { Button } from './Button';
+import { UserIcon, CameraIcon, HeartIcon } from '@ui/Icons';
+
+{/* <Meta of={ButtonStories} /> */}
+<Meta title="Showcase/Button" />
+
+# Button Examples
+
+{/* # Button
+
+A button is ...
+
+<Primary />
+
+## Props
+
+<Controls />
+
+## Stories
+
+### Primary */}
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Story of={ButtonStories.Primary} />
+            <Story of={ButtonStories.Secondary} />
+            <Story of={ButtonStories.Default} />
+            <Story of={ButtonStories.Success} />
+            <Story of={ButtonStories.Warning} />
+            <Story of={ButtonStories.Danger} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>variants</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Story of={ButtonStories.Solid} />
+            <Story of={ButtonStories.Bordered} />
+            <Story of={ButtonStories.Light} />
+            <Story of={ButtonStories.Flat} />
+            <Story of={ButtonStories.Faded} />
+            <Story of={ButtonStories.Shadow} />
+            <Story of={ButtonStories.Ghost} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Story of={ButtonStories.Small} />
+            <Story of={ButtonStories.Medium} />
+            <Story of={ButtonStories.Large} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Story of={ButtonStories.RadiusFull} />
+            <Story of={ButtonStories.RadiusLg} />
+            <Story of={ButtonStories.RadiusMd} />
+            <Story of={ButtonStories.RadiusSm} />
+            <Story of={ButtonStories.RadiusNone} />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with icons</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Button color="success" endContent={<CameraIcon/>}>Take a photo</Button>
+            <Button color="danger" variant="solid" startContent={<UserIcon/>}>Delete user</Button>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>only icons</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Button isIconOnly color="danger" aria-label="Like"><HeartIcon />
+            </Button>    
+            <Button isIconOnly color="warning" variant="faded" aria-label="Take a photo"><CameraIcon /></Button>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>loading</h2>
+    <Unstyled>
+        <div className='flex gap-2'>
+            <Story of={ButtonStories.Loading} />
+        </div>
+    </Unstyled>
+</div>
+
+{/* ... */}

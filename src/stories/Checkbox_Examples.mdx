@@ -1,0 +1,93 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Checkbox } from "@nextui-org/react";
+import { HeartIcon, PlusIcon } from '@ui/Icons';
+
+<Meta title="Showcase/Checkbox" />
+
+# Checkbox Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Checkbox isDisabled>Option</Checkbox>
+            <Checkbox isDisabled defaultSelected>Option</Checkbox>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Checkbox defaultSelected color="default">Default</Checkbox>
+            <Checkbox defaultSelected color="primary">Primary</Checkbox>
+            <Checkbox defaultSelected color="secondary">Secondary</Checkbox>
+            <Checkbox defaultSelected color="success">Success</Checkbox>
+            <Checkbox defaultSelected color="warning">Warning</Checkbox>
+            <Checkbox defaultSelected color="danger">Danger</Checkbox>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Checkbox defaultSelected size="sm">Small</Checkbox>
+            <Checkbox defaultSelected size="md">Medium</Checkbox>
+            <Checkbox defaultSelected size="lg">Large</Checkbox>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>radius</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Checkbox defaultSelected radius="full">Full</Checkbox>
+            <Checkbox defaultSelected radius="lg">Large</Checkbox>
+            <Checkbox defaultSelected radius="md">Medium</Checkbox>
+            <Checkbox defaultSelected radius="sm">Small</Checkbox>
+            <Checkbox defaultSelected radius="none">None</Checkbox>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>indeterminate</h2>
+    <Unstyled>
+        <Checkbox isIndeterminate>Option</Checkbox>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>line through</h2>
+    <Unstyled>
+        <Checkbox defaultSelected lineThrough>Option</Checkbox>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>custom check icon</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Checkbox defaultSelected icon={<HeartIcon filled />}>Option</Checkbox>
+            <Checkbox defaultSelected icon={<PlusIcon/>} color="warning">Option</Checkbox>
+        </div>
+    </Unstyled>
+</div>

@@ -3,10 +3,27 @@
 <link rel="preload" href="../src/shared/styles/fonts/InterVariable.woff2" />
 
 <style>
-    body {
-        font-family: "Inter", sans-serif;
+    html,
+    body, * {
+        font-family: "Inter", sans-serif !important;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+    }
+    .font-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    }
+    .font-normal {
+      font-weight: 400 !important;
+    }
+    .capitalize {
+      text-transform: capitalize !important;
+    }
+    .text-2xl {
+      font-size: 1.5rem !important/* 24px */;
+      line-height: 2rem !important /* 32px */;
+    }
+    .mt-8 {
+      margin-top: 32px !important;
     }
 </style>
 

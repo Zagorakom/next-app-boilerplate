@@ -1,0 +1,51 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+import { Spinner } from "@nextui-org/react";
+
+<Meta title="Showcase/Spinner" />
+
+# Spinner Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex gap-4">    
+            <Spinner size="sm" />
+            <Spinner size="md" />
+            <Spinner size="lg" />
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Spinner color="default"/>
+            <Spinner color="primary"/>
+            <Spinner color="secondary"/>
+            <Spinner color="success"/>
+            <Spinner color="warning"/>
+            <Spinner color="danger"/>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>with colored labels</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Spinner label="Default" color="default" labelColor="foreground"/>
+            <Spinner label="Primary" color="primary" labelColor="primary"/>
+            <Spinner label="Secondary" color="secondary" labelColor="secondary"/>
+            <Spinner label="Success" color="success" labelColor="success"/>
+            <Spinner label="Warning" color="warning" labelColor="warning"/>
+            <Spinner label="Danger" color="danger" labelColor="danger"/>
+        </div>
+    </Unstyled>
+</div>

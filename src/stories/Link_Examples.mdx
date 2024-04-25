@@ -1,0 +1,88 @@
+import { Meta, Unstyled, Story } from '@storybook/blocks';
+import { Link } from "@nextui-org/react";
+
+<Meta title="Showcase/Link" />
+
+# Link Examples
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>default</h2>
+    <Unstyled>
+        <Link href="#">Default Link</Link>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>disabled</h2>
+    <Unstyled>
+        <Link href="#" isDisabled>Disabled Link</Link>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>sizes</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Link href="#" size="sm">Small</Link>
+            <Link href="#" size="md">Medium</Link>
+            <Link href="#" size="lg">Large</Link>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>colors</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Link href="#" color="foreground">Foreground</Link>
+            <Link href="#" color="primary">Primary</Link>
+            <Link href="#" color="secondary">Secondary</Link>
+            <Link href="#" color="success">Success</Link>
+            <Link href="#" color="warning">Warning</Link>
+            <Link href="#" color="danger">Danger</Link>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>underline</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Link href="#" underline="none">None</Link>
+            <Link href="#" underline="hover">Hover</Link>
+            <Link href="#" underline="always">Always</Link>
+            <Link href="#" underline="active">Active</Link>
+            <Link href="#" underline="focus">Focus</Link>
+        </div>
+    </Unstyled>
+</div>
+
+<div style={{
+    marginBottom: '32px'
+}}>
+    <h2>external link</h2>
+    <Unstyled>
+        <div className="flex gap-4">
+            <Link isExternal href="https://github.com">
+                External Link
+            </Link>
+            <Link
+                isExternal
+                href="https://github.com"
+                showAnchorIcon
+            >
+                External Link Anchor
+            </Link>
+        </div>
+    </Unstyled>
+</div>
