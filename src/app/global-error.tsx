@@ -10,6 +10,7 @@ import {
 	Image,
 } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
+import { env_BASEPATH_STRING } from '@constants/envVars';
 
 export default function GlobalError({
 	error,
@@ -30,7 +31,7 @@ export default function GlobalError({
 								alt='nextui logo'
 								height={40}
 								radius='sm'
-								src='/assets/images/error.svg'
+								src={`${env_BASEPATH_STRING}/assets/images/error.svg`}
 								width={40}
 							/>
 							<div className='flex flex-col'>

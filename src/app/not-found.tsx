@@ -9,6 +9,7 @@ import {
 	Image,
 } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
+import { env_BASEPATH_STRING } from '@constants/envVars';
 
 export default function NotFound() {
 	const { t, lang } = useTranslation('common');
@@ -21,7 +22,7 @@ export default function NotFound() {
 						alt='nextui logo'
 						height={40}
 						radius='sm'
-						src='/assets/images/404.svg'
+						src={`${env_BASEPATH_STRING}/assets/images/404.svg`}
 						width={40}
 					/>
 					<div className='flex flex-col'>
@@ -40,7 +41,7 @@ export default function NotFound() {
 				<Divider />
 				<CardFooter className='px-6 py-4'>
 					{/* <Link
-						href={`/${lang}`}
+						href={`${env_BASEPATH_STRING}/${lang}`}
 						showAnchorIcon
 						underline='hover'
 						color='primary'
@@ -49,7 +50,7 @@ export default function NotFound() {
 					</Link> */}
 					<Button
 						as={Link}
-						href={`/${lang}`}
+						href={`${env_BASEPATH_STRING}/${lang}`}
 						showAnchorIcon
 						underline='hover'
 						// color='primary'
@@ -75,12 +76,12 @@ export default function NotFound() {
 	// 				alt='Woman listing to music'
 	// 				className='object-cover w-full h-full bg-cover'
 	// 				height={300}
-	// 				src='/assets/images/404.svg'
+	// 				src={`${env_BASEPATH_STRING}/assets/images/404.svg`}
 	// 				width={300}
 	// 			/>
 	// 			<CardFooter className='justify-center before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10 min-h-16'>
 	// 				<Link
-	// 					href={`/${lang}`}
+	// 					href={`${env_BASEPATH_STRING}/${lang}`}
 	// 					showAnchorIcon
 	// 					underline='hover'
 	// 					color='foreground'

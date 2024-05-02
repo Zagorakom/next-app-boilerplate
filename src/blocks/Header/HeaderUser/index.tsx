@@ -11,6 +11,7 @@ import { Button } from '@nextui-org/button';
 import useTranslation from 'next-translate/useTranslation';
 import SignOutBtn from '@components/SignOutBtn';
 import { UserContext } from '@providers/UserProvider';
+import { env_BASEPATH_STRING } from '@constants/envVars';
 
 const HeaderUser: React.FC = () => {
     const { user } = useContext(UserContext);
@@ -70,7 +71,7 @@ const HeaderUser: React.FC = () => {
                             style={animationPropsAngle}
                         >
                             <Image
-                                src='/assets/icons/angle_down.svg'
+                                src={`${env_BASEPATH_STRING}/assets/icons/angle_down.svg`}
                                 width={16}
                                 height={16}
                                 alt='Menu'

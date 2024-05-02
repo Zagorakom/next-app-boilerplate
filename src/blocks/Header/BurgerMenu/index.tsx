@@ -16,6 +16,7 @@ import useTranslation from 'next-translate/useTranslation';
 import BurgerMenuNav from './BurgerMenuNav';
 import { UserContext } from '@providers/UserProvider';
 import SignOutBtn from '@components/SignOutBtn';
+import { env_BASEPATH_STRING } from '@constants/envVars';
 
 const BurgerMenu: React.FC = () => {
 	const { user } = useContext(UserContext);
@@ -69,7 +70,7 @@ const BurgerMenu: React.FC = () => {
 				onClick={() => setIsModalVisible(prev => !prev)}
 			>
 				<Image
-					src='/assets/icons/burger.svg' // required
+					src={`${env_BASEPATH_STRING}/assets/icons/burger.svg`} // required
 					width={24} // required (if not static import)
 					height={24} // required (if not static import)
 					alt='Burger menu' // required
@@ -121,7 +122,7 @@ const BurgerMenu: React.FC = () => {
 								onClick={() => setIsModalVisible(prev => !prev)}
 							>
 								<Image
-									src='/assets/icons/close.svg' // required
+									src={`${env_BASEPATH_STRING}/assets/icons/close.svg`} // required
 									width={24} // required (if not static import)
 									height={24} // required (if not static import)
 									alt='Close' // required

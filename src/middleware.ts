@@ -23,10 +23,10 @@ export async function middleware(request: NextRequest) {
 	//////////////////////////////// ON REQUEST //////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////
 
-	// console.log('request.nextUrl = ', request.nextUrl);
-	console.log('request.nextUrl.pathname = ', request.nextUrl.pathname);
 	console.log('request.url = ', request.url);
+	console.log('request.nextUrl.pathname = ', request.nextUrl.pathname);
 	request.cookies.set('lastUrlReq', request.nextUrl.pathname);
+	// console.log('request.nextUrl = ', request.nextUrl);
 	// const allCookies = request.cookies.getAll();
 	// console.log('allCookies (REQ) = ', allCookies);
 	// console.log('request.cookies', request.cookies);
@@ -37,6 +37,10 @@ export async function middleware(request: NextRequest) {
 	//////////////////////////////////////////////////////////////////////////////
 	const pathname = request.nextUrl.pathname;
 	const { locales, defaultLocale } = i18n;
+	const BASE_PATH = process.env.NEXT_PUBLIC_BASEPATH ? process.env.NEXT_PUBLIC_BASEPATH : '';
+	const isSubpathAdded = !!BASE_PATH;
+	const sectionIndexInPath = 2;
+	const langIndexInPath = 1;
 
 	// Check if the default locale is in the pathname
 	// (e.g. incoming request is /en/about)
@@ -51,45 +55,86 @@ export async function middleware(request: NextRequest) {
 		&&
 		(SUPPORTED_SECTIONS.some(
 			section => pathname.startsWith(`/${section}/`) || pathname === `/${section}`
-		) || pathname === '/');
+		) || pathname === `/`);
 	
 	// Check if the pathname has unsupported locale
 	// (e.g. incoming request is /es/about)
 	const pathnameHasUnsupportedLocale =
+		!pathnameIsMissingLocale
+		&&
 		locales.every(
 			locale => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
 		)
 		&&
-		(SUPPORTED_SECTIONS.includes(pathname.split('/')[2]) || (!pathname.split('/')[2] && pathname !== '/'));
+		(SUPPORTED_SECTIONS.includes(pathname.split('/')[sectionIndexInPath]) || (!pathname.split('/')[sectionIndexInPath] && pathname !== `/`));
 	
-	if (pathnameHasDefaultLocale) {
-		// e.g. incoming request is /en/about
-		// The new URL is now /about
-		return NextResponse.redirect(
-			new URL(
-				pathname.replace(
-					`/${defaultLocale}`,
-					pathname === `/${defaultLocale}` ? '/' : ''
-				),
-				request.url
-			)
-		);
-	}
-	if (pathnameIsMissingLocale) {
-		// We are on the default locale
-		// Rewrite so Next.js understands
+	console.log({
+		basePath: BASE_PATH,
+		isSubpathAdded,
+		sectionIndexInPath,
+		langIndexInPath,
+		pathnameHasDefaultLocale,
+		pathnameIsMissingLocale,
+		pathnameHasUnsupportedLocale,
+		section: pathname.split('/')[sectionIndexInPath],
+		pathname
+	});
+	
+	// if (pathnameHasDefaultLocale) {
+	// 	// e.g. incoming request is /en/about
+	// 	// The new URL is now /about
+	// 	return NextResponse.redirect(
+	// 		new URL(
+	// 			pathname.replace(
+	// 				`/${defaultLocale}`,
+	// 				pathname === `/${defaultLocale}` ? '/' : ''
+	// 			),
+	// 			request.url
+	// 		)
+	// 	);
+	// }
 
+	// if (pathnameIsMissingLocale) {
+	// 	// We are on the default locale
+	// 	// Rewrite so Next.js understands
+	// 	// e.g. incoming request is /about
+	// 	// Tell Next.js it should pretend it's /en/about
+	// 	return NextResponse.rewrite(
+	// 		new URL(`/${defaultLocale}${pathname}`, request.url)
+	// 	);
+	// }
+	if (pathnameIsMissingLocale) {
 		// e.g. incoming request is /about
-		// Tell Next.js it should pretend it's /en/about
-		return NextResponse.rewrite(
-			new URL(`/${defaultLocale}${pathname}`, request.url)
+		// The new URL is now /en/about
+		return NextResponse.redirect(
+			new URL(`${BASE_PATH}/${defaultLocale}${pathname}`, request.url)
 		);
 	}
+
+	// if (pathnameHasUnsupportedLocale) {
+	// 	// e.g. incoming request is /es/about
+	// 	// The new URL is now /about
+	// 	const parsedPath = pathname.split('/');
+	// 	{/* parsedPath[1] = defaultLocale; // changing lang to default
+	// 	const newPath = parsedPath.join('/');
+	// 	return NextResponse.redirect(
+	// 		new URL(newPath, request.url)
+	// 	); */} {/* warning: double redirect */}
+	// 	return NextResponse.redirect(
+	// 		new URL(
+	// 			pathname.replace(
+	// 				`/${parsedPath[1]}`,
+	// 				pathname === `/${parsedPath[1]}` ? '/' : ''
+	// 			),
+	// 			request.url
+	// 		)
+	// 	);
+	// }
 	if (pathnameHasUnsupportedLocale) {
 		// e.g. incoming request is /es/about
-		// The new URL is now /about
+		// The new URL is now /en/about
 		const parsedPath = pathname.split('/');
-		{/* parsedPath[1] = defaultLocale; // changing lang to default
+		{/* parsedPath[langIndexInPath] = defaultLocale; // changing lang to default
 		const newPath = parsedPath.join('/');
 		return NextResponse.redirect(
 			new URL(newPath, request.url)
@@ -97,13 +142,14 @@ export async function middleware(request: NextRequest) {
 		return NextResponse.redirect(
 			new URL(
 				pathname.replace(
-					`/${parsedPath[1]}`,
-					pathname === `/${parsedPath[1]}` ? '/' : ''
+					`/${parsedPath[langIndexInPath]}`,
+					`${BASE_PATH}/${defaultLocale}`
 				),
 				request.url
 			)
 		);
 	}
+	
 	//////////////////////////////////////////////////////////////////////////////
 	////////////////////////////// <- REDIRECTS //////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////////

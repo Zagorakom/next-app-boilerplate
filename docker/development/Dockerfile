@@ -20,6 +20,8 @@ RUN \
 # 2. Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+# Environment variable for running the app on subpath (E.g. domain.com/subpath/...)
+# ENV NEXT_PUBLIC_BASEPATH=/docs
 COPY --from=deps --link /app/node_modules ./node_modules
 COPY --link . .
 # This will do the trick, use the corresponding env file for each environment.
