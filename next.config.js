@@ -3,6 +3,27 @@ const nextTranslate = require('next-translate-plugin');
 
 const nextConfig = {
     output: 'standalone', // for Docker
+    experimental: {
+        serverActions: {
+            allowedOrigins: ['local-doit.wb.ru'],
+        },
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'app.requestly.io',
+                port: '',
+                pathname: '/**',
+            },
+        ],
+    },
 }
 
 // module.exports = nextConfig; // (1)

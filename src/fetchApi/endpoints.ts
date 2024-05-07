@@ -5,6 +5,7 @@ const API_NEXT_PREFIX = `${process.env.NEXT_PUBLIC_HOSTNAME}/api`;
 const URLS = {
     API: {
         user: `${API_PREFIX}/user/1`, // TEMP
+        userById: `${API_PREFIX}/user`, // TEMP
         // logout: `${API_PREFIX}/auth/logout`,
         logout: `${API_NEXT_PREFIX}/logout`,
     }

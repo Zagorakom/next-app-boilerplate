@@ -21,6 +21,12 @@ const NAVIGATION_LIST: TNavigationList = [ // for header and burger menu
         isNew: false,
     },
     {
+        labelText: 'Images',
+        labelTranslationKey: 'labels.images',
+        url: '/images',
+        isNew: false,
+    },
+    {
         labelText: 'Broken link',
         labelTranslationKey: 'labels.broken',
         url: '/bar/wopiufowieuo',
@@ -36,6 +42,6 @@ const NAVIGATION_LIST: TNavigationList = [ // for header and burger menu
 
 const NAVIGATION_TRANSLATION_NS: string = 'navigation';
 
-const SUPPORTED_SECTIONS: Array<string> = ['about', 'foo', 'bar'];
+const SUPPORTED_SECTIONS: Array<string> = ['about', 'foo', 'bar', 'images'];
 
 export { NAVIGATION_LIST, NAVIGATION_TRANSLATION_NS, SUPPORTED_SECTIONS };

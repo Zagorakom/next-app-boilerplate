@@ -1,8 +1,9 @@
 {
 	"labels": {
-        "about": "About",
-        "foo": "Foo",
-        "bar": "Bar",
-        "broken": "Broken link"
-    }
+		"about": "About",
+		"foo": "Foo",
+		"bar": "Bar",
+		"broken": "Broken link",
+		"images": "Images"
+	}
 }

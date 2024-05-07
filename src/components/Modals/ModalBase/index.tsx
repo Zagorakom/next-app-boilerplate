@@ -31,9 +31,9 @@ const ModalBase: React.FC<IProps> = ({
     const transRef = useSpringRef();
     const transitions = useTransition(isVisible ? [1] : [], {
         ref: transRef,
-		from: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
-		enter: { backdropFilter: 'blur(4px) saturate(10%) brightness(30%)' },
-		leave: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
+		from: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)', webkitBackdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
+		enter: { backdropFilter: 'blur(4px) saturate(10%) brightness(30%)', webkitBackdropFilter: 'blur(4px) saturate(10%) brightness(30%)' },
+		leave: { backdropFilter: 'blur(0px) saturate(100%) brightness(100%)', webkitBackdropFilter: 'blur(0px) saturate(100%) brightness(100%)' },
         // config: config.default, // default = { tension: 170, friction: 26 }
         // config: config.stiff, // stiff = { tension: 210, friction: 20 }
         config: {
