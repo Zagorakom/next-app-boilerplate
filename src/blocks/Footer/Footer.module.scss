@@ -28,7 +28,7 @@
     }
 	@media #{$desktop} {
 		width: $content-max-width-desktop;
-		flex-direction: column;
+		flex-direction: row;
 		// justify-content: space-between;
     }
 }

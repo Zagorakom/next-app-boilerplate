@@ -5,6 +5,7 @@ import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import { NAVIGATION_TRANSLATION_NS } from '@configs/navigation';
 import cn from 'classnames';
+import { Count } from '@ui/Count';
 
 const Footer: React.FC = () => {
 	const { t, lang } = useTranslation(NAVIGATION_TRANSLATION_NS);
@@ -15,7 +16,8 @@ const Footer: React.FC = () => {
 			'dark text-foreground-900 bg-background'
 		)}>
 			<div className={styles.footerContent}>
-				Footer
+				<span>Footer</span>
+				<Count />
 			</div>
 		</footer>
 	);

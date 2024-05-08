@@ -7,6 +7,7 @@ import { cookies } from 'next/headers';
 import { ReduxProvider } from '@providers/ReduxProvider';
 import UserProvider from '@providers/UserProvider';
 import { UiProvider } from '@providers/UiProvider';
+import { JotaiProvider } from '@providers/JotaiProvider';
 import { getUser } from '@fetchApi/server/getUser';
 import { DevToolsController } from '@utils/devTools/component';
 import { logBoldGreen } from '@utils/log';
@@ -21,7 +22,7 @@ export default async function MainLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	// const user = await getUser();
+	const user = await getUser();
 
 	// const user = { // mockData from mockapi endpoint
 	// 	"id": "1",
@@ -43,7 +44,7 @@ export default async function MainLayout({
 	// 	status: 'ok',
 	// };
 
-	const user: any = {};
+	// const user: any = {};
 
 	console.log('layoutMain -> user.status', user?.status);
 	console.log('layoutMain -> user_id', user?.data?.id);
@@ -55,18 +56,20 @@ export default async function MainLayout({
 
 	return (
 		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light-wb", themes: ["light-wb", "dark-wb"] }}>
-			<ReduxProvider>
-				<UserProvider userData={user?.data}>
-					<div className={styles.layout} data-lang={lang}>
-						<DevToolsController />
-						<Header />
-						<main className={styles.main}>
-							{children}
-						</main>
-						<Footer />
-					</div>
-				</UserProvider>
-			</ReduxProvider>
+			<JotaiProvider>
+				<ReduxProvider>
+					<UserProvider userData={user?.data}>
+						<div className={styles.layout} data-lang={lang}>
+							<DevToolsController />
+							<Header />
+							<main className={styles.main}>
+								{children}
+							</main>
+							<Footer />
+						</div>
+					</UserProvider>
+				</ReduxProvider>
+			</JotaiProvider>
 		</UiProvider>
 	);
 }
