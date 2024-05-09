@@ -7,6 +7,10 @@ const nextConfig = {
         serverActions: {
             allowedOrigins: ['local-doit.wb.ru'],
         },
+        swcPlugins: [
+            ['@swc-jotai/react-refresh', {}],
+            ['@swc-jotai/debug-label', {}],
+        ],
     },
     images: {
         remotePatterns: [
