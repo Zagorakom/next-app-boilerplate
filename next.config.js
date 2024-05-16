@@ -7,11 +7,12 @@ const nextConfig = {
         serverActions: {
             allowedOrigins: ['local-doit.wb.ru'],
         },
-        swcPlugins: [
-            ['@swc-jotai/react-refresh', {}],
-            ['@swc-jotai/debug-label', {}],
-        ],
+        // swcPlugins: [
+        //     ['@swc-jotai/react-refresh', {}],
+        //     ['@swc-jotai/debug-label', {}],
+        // ], // Waiting for PR being merged - https://github.com/pmndrs/swc-jotai/pull/30
     },
+    transpilePackages: ['jotai-devtools'],
     images: {
         remotePatterns: [
             {

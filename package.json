@@ -40,6 +40,7 @@
     "framer-motion": "11.0.28",
     "i18next": "23.3.0",
     "jotai": "2.8.0",
+    "jotai-devtools": "^0.9.1",
     "next": "14.2.3",
     "next-themes": "0.3.0",
     "next-translate": "2.6.2",
