@@ -4,6 +4,7 @@
 		"foo": "Foo",
 		"bar": "Bar",
 		"broken": "Broken link",
-		"images": "Images"
+		"images": "Images",
+		"oops": "Oops"
 	}
 }

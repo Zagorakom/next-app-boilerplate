@@ -3,7 +3,9 @@ import styles from './Avatar.module.scss';
 import cn from 'classnames';
 import { useMemo, useContext } from 'react';
 import NiceAvatar, { NiceAvatarConfig } from '@components/NiceAvatar';
-import { UserContext } from '@providers/UserProvider';
+// import { UserContext } from '@providers/UserProvider';
+import { useAtom } from 'jotai';
+import { userAtom } from '@store/jotai';
 
 interface IProps {
     avatarStyle: React.CSSProperties;
@@ -15,6 +17,7 @@ interface IProps {
     byContext?: boolean;
     avatar_url?: string;
     rank?: number;
+    hairColor?: string;
     position?: number;
 }
 
@@ -28,9 +31,11 @@ const Avatar: React.FC<IProps> = ({
     byContext,
     avatar_url,
     rank,
+    hairColor,
     position,
 }) => {
-    const { user } = useContext(UserContext); // my user info
+    // const { user } = useContext(UserContext); // my user info
+    const [user] = useAtom(userAtom);
     const rankNum = !byContext ? rank : user?.rank;
     const avatarUrl = !byContext ? avatar_url : user?.avatar_url;
 
@@ -81,6 +86,7 @@ const Avatar: React.FC<IProps> = ({
                     isRandom={niceIsRandom}
                     shape={shape}
                     hairColorByRank={hairColorByRank}
+                    hairColor={hairColor}
                 />
             }
             {!!position &&

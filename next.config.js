@@ -5,9 +5,14 @@ const nextConfig = {
     output: 'standalone', // for Docker
     experimental: {
         serverActions: {
-            allowedOrigins: ['local-doit.wb.ru'],
+            allowedOrigins: ['local-doit.wb.ru', 'doit-ingress-controller.doit.k8s.dev-el'],
         },
+        // swcPlugins: [
+        //     ['@swc-jotai/react-refresh', {}],
+        //     ['@swc-jotai/debug-label', {}],
+        // ], // Waiting for PR being merged - https://github.com/pmndrs/swc-jotai/pull/30
     },
+    transpilePackages: ['jotai-devtools'],
     images: {
         remotePatterns: [
             {

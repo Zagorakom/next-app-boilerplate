@@ -7,7 +7,9 @@ import { cookies } from 'next/headers';
 import { ReduxProvider } from '@providers/ReduxProvider';
 import UserProvider from '@providers/UserProvider';
 import { UiProvider } from '@providers/UiProvider';
+import { JotaiProvider } from '@providers/JotaiProvider';
 import { getUser } from '@fetchApi/server/getUser';
+import { mockUser, mockUserOnlyId, mockUserEmpty } from '@mocks/userData';
 import { DevToolsController } from '@utils/devTools/component';
 import { logBoldGreen } from '@utils/log';
 import useTranslation from 'next-translate/useTranslation';
@@ -22,28 +24,7 @@ export default async function MainLayout({
 	children: React.ReactNode;
 }) {
 	// const user = await getUser();
-
-	// const user = { // mockData from mockapi endpoint
-	// 	"id": "1",
-	// 	"data": {
-	// 	  "fullName": "Jimmy Veum",
-	// 	  "firstName": "Hiram",
-	// 	  "lastName": "O'Connell",
-	// 	  "createdAt": "2024-04-06T08:04:18.617Z",
-	// 	  "role": "role 1",
-	// 	  "id": "1"
-	// 	},
-	// 	"status": "ok"
-	// }
-
-	// const user = {
-	// 	data: {
-	// 		user_id: 4
-	// 	},
-	// 	status: 'ok',
-	// };
-
-	const user: any = {};
+	const user: any = mockUserEmpty;
 
 	console.log('layoutMain -> user.status', user?.status);
 	console.log('layoutMain -> user_id', user?.data?.id);
@@ -55,18 +36,20 @@ export default async function MainLayout({
 
 	return (
 		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light-wb", themes: ["light-wb", "dark-wb"] }}>
-			<ReduxProvider>
-				<UserProvider userData={user?.data}>
-					<div className={styles.layout} data-lang={lang}>
-						<DevToolsController />
-						<Header />
-						<main className={styles.main}>
-							{children}
-						</main>
-						<Footer />
-					</div>
-				</UserProvider>
-			</ReduxProvider>
+			<JotaiProvider>
+				<ReduxProvider>
+					<UserProvider userData={user?.data}>
+						<div className={styles.layout} data-lang={lang}>
+							<DevToolsController />
+							<Header />
+							<main className={styles.main}>
+								{children}
+							</main>
+							<Footer />
+						</div>
+					</UserProvider>
+				</ReduxProvider>
+			</JotaiProvider>
 		</UiProvider>
 	);
 }

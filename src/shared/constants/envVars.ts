@@ -5,5 +5,6 @@ const env_MODE: string = process.env.NODE_ENV;
 const env_RUNTIME: string | undefined = process.env.NEXT_RUNTIME ? process.env.NEXT_RUNTIME : 'browser';
 const env_API_ROUTE: string | undefined = process.env.NEXT_PUBLIC_API_URL;
 const env_isBROWSER = () => typeof window !== 'undefined' && typeof document !== 'undefined';
+const env_WITH_DEVTOOLS: boolean = process.env.NEXT_PUBLIC_WITH_DEVTOOLS === 'true';
 
-export { env_isPROD, env_isDEV, env_MODE, env_RUNTIME, env_API_ROUTE, env_isBROWSER };
+export { env_isPROD, env_isDEV, env_MODE, env_RUNTIME, env_API_ROUTE, env_isBROWSER, env_WITH_DEVTOOLS };

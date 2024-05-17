@@ -15,17 +15,21 @@ import {
 import { Link } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 import cn from 'classnames';
-import { getUserById } from '@fetchApi/server/getUserById'; // TEMP
+// import { getUserById } from '@fetchApi/server/getUserById'; // TEMP
+// import { useAtom } from 'jotai';
+// import { userAtom } from '@store/jotai';
 
 export default function AboutPage() {
 	const { t, lang } = useTranslation('about');
+	// const [user, setUser] = useAtom(userAtom);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 	const [isModalActionInProgress, setIsModalActionInProgress] = useState(false);
 
-	const onFetchUser = async () => {
-		const user = await getUserById(2);
-		console.log({ user });
-	};
+	// const onFetchUser = async () => {
+	// 	const userData = await getUserById(2);
+	// 	console.log({ userData });
+	// 	setUser(userData);
+	// };
 
 	const closeModal = useCallback(() => {
 		console.log('onConfirm');
@@ -134,7 +138,7 @@ export default function AboutPage() {
 						disableRipple
 						// isIconOnly
 						className='min-w-0 w-12 h-12 p-0'
-						onPress={onFetchUser}
+						// onPress={onFetchUser}
 					>
 						<UserIcon
 							size={36}

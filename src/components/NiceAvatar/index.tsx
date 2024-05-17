@@ -28,6 +28,7 @@ interface IProps {
     style?: React.CSSProperties;
     shape?: 'circle' | 'rounded' | 'square';
     hairColorByRank?: string;
+    hairColor?: string;
 }
 
 export type NiceAvatarConfig = AvatarFullConfig;
@@ -39,6 +40,7 @@ const NiceAvatar: React.FC<IProps> = ({
     style,
     shape,
     hairColorByRank,
+    hairColor,
 }) => {
 
     const [isVisible, setIsVisible] = useState(false);
@@ -67,7 +69,7 @@ const NiceAvatar: React.FC<IProps> = ({
         <Avatar
             style={{...style}}
             {...avatarConfig}
-            hairColor={hairColorByRank}
+            hairColor={hairColor || hairColorByRank}
             shape={shape ? shape : 'circle'}
         />
         :
