@@ -10,10 +10,13 @@ import Image from 'next/image';
 import { Button } from '@nextui-org/button';
 import useTranslation from 'next-translate/useTranslation';
 import SignOutBtn from '@components/SignOutBtn';
-import { UserContext } from '@providers/UserProvider';
+// import { UserContext } from '@providers/UserProvider';
+import { useAtom } from 'jotai';
+import { userAtom } from '@store/jotai';
 
 const HeaderUser: React.FC = () => {
-    const { user } = useContext(UserContext);
+    // const { user } = useContext(UserContext);
+    const [user] = useAtom(userAtom);
     const headerUserMenuRef: any = useRef(null);
     const [isUserMenuVisible, setIsUserMenuVisible] = useState(false);
 	const transitions = useTransition(isUserMenuVisible, {
@@ -61,6 +64,8 @@ const HeaderUser: React.FC = () => {
                             }}
                             withBadge={false}
                             byContext={true}
+                            // rank={0}
+                            hairColor={user?.data?.id && `var(--hair-color-test-${user?.data?.id})`} // TEMP Demo
                             // niceConfig
                             // niceIsRandom
                             // shape='rounded'

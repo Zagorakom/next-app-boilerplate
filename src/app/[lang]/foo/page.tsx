@@ -1,4 +1,3 @@
-'use client';
 import styles from './page.module.scss';
 // import Link from 'next/link';
 import { Link } from '@nextui-org/react';
@@ -6,16 +5,10 @@ import useTranslation from 'next-translate/useTranslation';
 import Avatar from '@components/Avatar';
 import { Button } from '@nextui-org/button';
 import { Glitch } from '@ui/Glitch';
-import { getUserById } from '@fetchApi/server/getUserById'; // TEMP
 
 const FooPage: React.FC = () => {
     const { t, lang } = useTranslation('common');
     // throw new Error('Test Error');
-
-    const onFetchUser = async () => {
-		const user = await getUserById(3);
-		console.log({ user });
-	};
     
     return (
         <div className={styles.foo}>
@@ -142,7 +135,7 @@ const FooPage: React.FC = () => {
                 </div>
                 <div className={styles.avatarsWrapper}>
                     <Button variant='faded' color='secondary' className='m-1'>Click me</Button>
-                    <Button variant='flat' color='danger' className='m-1' onPress={onFetchUser}>Click me</Button>
+                    <Button variant='flat' color='danger' className='m-1'>Click me</Button>
                     <Button variant='ghost' color='warning' className='m-1'>Click me</Button>
                 </div>
 			</div>

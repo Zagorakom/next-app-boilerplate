@@ -5,7 +5,9 @@ import { useState, useEffect, useContext } from 'react';
 import useTranslation from 'next-translate/useTranslation';
 import { logout } from '@fetchApi/methods';
 import { redirect } from 'next/navigation';
-import { UserContext } from '@providers/UserProvider';
+// import { UserContext } from '@providers/UserProvider';
+import { useAtom } from 'jotai';
+import { userAtom } from '@store/jotai';
 
 interface IProps {
     type?:
@@ -16,7 +18,8 @@ interface IProps {
 }
 
 const SignOutBtn: React.FC<IProps> = ({type = 'default', customStyle}) => {
-    const { user, setUser } = useContext(UserContext);
+    // const { user, setUser } = useContext(UserContext);
+    const [user, setUser] = useAtom(userAtom);
     const { t, lang } = useTranslation('common');
     const [needToRedirect, setNeedToRedirect] = useState(false);
 

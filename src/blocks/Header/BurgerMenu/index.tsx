@@ -14,11 +14,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setBodyScrollState } from '@store/uiSlice';
 import useTranslation from 'next-translate/useTranslation';
 import BurgerMenuNav from './BurgerMenuNav';
-import { UserContext } from '@providers/UserProvider';
+// import { UserContext } from '@providers/UserProvider';
+import { useAtom } from 'jotai';
+import { userAtom } from '@store/jotai';
 import SignOutBtn from '@components/SignOutBtn';
 
 const BurgerMenu: React.FC = () => {
-	const { user } = useContext(UserContext);
+	// const { user } = useContext(UserContext);
+	const [user] = useAtom(userAtom);
 	const [isModalVisible, setIsModalVisible] = useState(false);
 	const transitions = useTransition(isModalVisible, {
 		from: { transform: 'translate3d(0,-100%,0)' },
