@@ -35,7 +35,7 @@ export default async function MainLayout({
 	logBoldGreen(`MainLayout lang = ${lang}`);
 
 	return (
-		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light-wb", themes: ["light-wb", "dark-wb"] }}>
+		<UiProvider themeProps={{ attribute: "class", defaultTheme: "light", themes: ["light", "dark"] }}>
 			<JotaiProvider>
 				<ReduxProvider>
 					<UserProvider userData={user?.data}>

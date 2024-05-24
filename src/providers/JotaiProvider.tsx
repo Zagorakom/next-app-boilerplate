@@ -8,7 +8,7 @@ import { env_isDEV, env_WITH_DEVTOOLS } from '@constants/envVars';
 
 export const JotaiProvider = ({ children }: { children: React.ReactNode }) => {
     const { theme } = useTheme();
-    const devToolsTheme = theme === 'light-wb' ? 'light' : 'dark';
+    const devToolsTheme = theme === 'light' ? 'light' : 'dark';
 	return (
         <Provider>
             {env_isDEV && env_WITH_DEVTOOLS &&

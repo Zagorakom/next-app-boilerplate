@@ -34,7 +34,7 @@ export default async function RootLayout({
 
 	return (
 		// <html lang={lang}>
-		<html className='light-wb text-foreground bg-background' suppressHydrationWarning>
+		<html className='light text-foreground bg-background' suppressHydrationWarning>
 			<body className={cn(
 				fontInter.className,
 				fontInter.variable,

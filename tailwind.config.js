@@ -20,7 +20,7 @@ module.exports = {
 	plugins: [
 		nextui({
 			themes: {
-				"light-wb": {
+				"light": {
 					extend: "light", // <- inherit default values from light theme
 					colors: {
 						background: "#FCFBFD",
@@ -62,7 +62,7 @@ module.exports = {
 					},
 					// layout: {}
 				},
-				"dark-wb": {
+				"dark": {
 					extend: "dark", // <- inherit default values from dark theme
 					colors: {
 						// background: "#251930",
