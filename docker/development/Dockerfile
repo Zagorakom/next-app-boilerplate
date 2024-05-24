@@ -8,6 +8,9 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
+# Copy the tarballs directory
+# COPY --link tarballs ./tarballs
+
 # Install dependencies based on the preferred package manager
 COPY --link package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
